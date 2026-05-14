@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -9,31 +9,24 @@
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230e0f11'/><text x='16' y='23' font-family='monospace' font-size='17' font-weight='bold' fill='%23e8e4de' text-anchor='middle'>rh</text></svg>"
-      type="image/svg+xml"
-    />
+      type="image/svg+xml" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{PAGE_TITLE}}" />
-    <meta
-      property="og:description"
-      content="Posts tagged Fortinet — robharman.me"
-    />
+    <meta property="og:title" content="Fortinet — robharman.me" />
+    <meta property="og:description" content="Posts tagged Fortinet — robharman.me" />
     <meta property="og:url" content="https://robharman.me/tag/fortinet/" />
     <link
       rel="alternate"
       type="application/rss+xml"
       title="robharman.me"
-      href="/rss.xml"
-    />
+      href="/rss.xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       rel="preconnect"
       href="https://fonts.gstatic.com"
-      crossorigin="anonymous"
-    />
+      crossorigin="anonymous" />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
     <style>
       *,
       *::before,
@@ -439,6 +432,15 @@
       .site-footer a:hover {
         color: var(--fg-muted);
       }
+      .site-build {
+        max-width: 900px;
+        margin: 4px auto 0;
+        padding: 0 24px;
+        font-family: var(--mono);
+        font-size: 10px;
+        color: var(--fg-dim);
+        letter-spacing: 0.04em;
+      }
 
       @media (max-width: 600px) {
         .newspaper-item {
@@ -458,15 +460,6 @@
           justify-content: flex-start;
         }
       }
-      .site-build {
-        max-width: 900px;
-        margin: 4px auto 0;
-        padding: 0 24px;
-        font-family: var(--mono);
-        font-size: 10px;
-        color: var(--fg-dim);
-        letter-spacing: 0.04em;
-      }
     </style>
   </head>
   <body>
@@ -474,6 +467,7 @@
       <div class="site-nav-inner">
         <a href="/index.html" class="site-logo">robharman.me</a>
         <div class="nav-links">
+          
           <a href="/readme.html">readme</a>
           <a
             href="https://github.com/robharman"
@@ -486,15 +480,9 @@
         <div class="nav-controls">
           <span class="picker-label">Style:</span>
           <div class="picker">
-            <button type="button" class="tab-btn" data-variant="terminal" title="terminal">
-              🖥️
-            </button>
-            <button type="button" class="tab-btn" data-variant="cards" title="card">
-              🃏
-            </button>
-            <button type="button" class="tab-btn" data-variant="newspaper" title="newspaper">
-              📰
-            </button>
+            <button type="button" class="tab-btn" data-variant="terminal" title="terminal">🖥️</button>
+            <button type="button" class="tab-btn" data-variant="cards" title="card">🃏</button>
+            <button type="button" class="tab-btn" data-variant="newspaper" title="newspaper">📰</button>
           </div>
           <button type="button" class="dark-btn" id="dark-btn">&#9728;</button>
         </div>
@@ -507,214 +495,36 @@
 
     <!-- Terminal variant -->
     <div class="posts-terminal">
-      <div class="terminal-rows">
-        <div class="terminal-row">
-          <span class="terminal-date">2021-05-04</span>
-          <span class="terminal-title"
-            ><a href="/posts/fortigate-7-0-x-with-bell-residential-fibre.html"
-              >FortiGate 7.0.x With Bell Residential Fibre</a
-            ></span
-          >
-          <span class="terminal-tags"
-            ><a href="/tag/fortinet/index.html">Fortinet</a></span
-          >
-        </div>
-        <div class="terminal-row">
-          <span class="terminal-date">2021-05-02</span>
-          <span class="terminal-title"
-            ><a
-              href="/posts/fortigate-certificate-request-with-multiple-dns-names.html"
-              >FortiGate 7.0.x certificate request with multiple DNS names</a
-            ></span
-          >
-          <span class="terminal-tags"
-            ><a href="/tag/fortinet/index.html">Fortinet</a></span
-          >
-        </div>
-        <div class="terminal-row">
-          <span class="terminal-date">2021-05-01</span>
-          <span class="terminal-title"
-            ><a href="/posts/installing-fortigate-on-hyper-v-2019.html"
-              >Installing FortiGate 7.0.x on Hyper-V 2019</a
-            ></span
-          >
-          <span class="terminal-tags"
-            ><a href="/tag/fortinet/index.html">Fortinet</a
-            ><a href="/tag/powershell/index.html">PowerShell</a></span
-          >
-        </div>
-        <div class="terminal-row">
-          <span class="terminal-date">2021-02-11</span>
-          <span class="terminal-title"
-            ><a href="/posts/initial-impressions-of-fortisiem-6-1.html"
-              >Initial Impressions of FortiSIEM 6.1</a
-            ></span
-          >
-          <span class="terminal-tags"
-            ><a href="/tag/fortinet/index.html">Fortinet</a></span
-          >
-        </div>
-      </div>
+      <div class="terminal-rows">      <div class="terminal-row">
+        <span class="terminal-date">2021-05-01</span>
+        <span class="terminal-title"><a href="/posts/installing-fortigate-on-hyper-v-2019.html">Installing FortiGate 7.0.x on Hyper-V 2019</a></span>
+        <span class="terminal-tags"><a href="/tag/fortinet/index.html">Fortinet</a><a href="/tag/powershell/index.html">PowerShell</a></span>
+      </div></div>
     </div>
 
     <!-- Cards variant -->
     <div class="posts-cards">
-      <div class="cards-grid">
-        <div class="card">
-          <span class="card-date">2021-05-04</span>
-          <a
-            class="card-title"
-            href="/posts/fortigate-7-0-x-with-bell-residential-fibre.html"
-            >FortiGate 7.0.x With Bell Residential Fibre</a
-          >
-          <span class="card-excerpt"
-            >I've been using Sophos' UTM since forever, but at work we're moving
-            away from our legacy Cisco ASAs, and to FortiGate. So I'm making the
-            switch at home with an
-          </span>
-          <span class="card-tags"
-            ><a href="/tag/fortinet/index.html">Fortinet</a></span
-          >
-        </div>
-        <div class="card">
-          <span class="card-date">2021-05-02</span>
-          <a
-            class="card-title"
-            href="/posts/fortigate-certificate-request-with-multiple-dns-names.html"
-            >FortiGate 7.0.x certificate request with multiple DNS names</a
-          >
-          <span class="card-excerpt"
-            >The lack of clarity in FortiGate's error messages and documentation
-            continues to irk me. The syntax required for it to include multiple
-            DNS names in the certifi</span
-          >
-          <span class="card-tags"
-            ><a href="/tag/fortinet/index.html">Fortinet</a></span
-          >
-        </div>
-        <div class="card">
-          <span class="card-date">2021-05-01</span>
-          <a
-            class="card-title"
-            href="/posts/installing-fortigate-on-hyper-v-2019.html"
-            >Installing FortiGate 7.0.x on Hyper-V 2019</a
-          >
-          <span class="card-excerpt"
-            >Fortinet's documentation is pretty terrible. This is especially
-            true for their Hyper-V deployment instructions which leave out
-            multiple steps, and left me frustrated trying to piece together
-            instructions from multiple articles.</span
-          >
-          <span class="card-tags"
-            ><a href="/tag/fortinet/index.html">Fortinet</a
-            ><a href="/tag/powershell/index.html">PowerShell</a></span
-          >
-        </div>
-        <div class="card">
-          <span class="card-date">2021-02-11</span>
-          <a
-            class="card-title"
-            href="/posts/initial-impressions-of-fortisiem-6-1.html"
-            >Initial Impressions of FortiSIEM 6.1</a
-          >
-          <span class="card-excerpt"
-            >We're finally at the point where our infrastructure is cleaned up
-            enough that getting usable signal through all the logspew is finally
-            possible. After comparing</span
-          >
-          <span class="card-tags"
-            ><a href="/tag/fortinet/index.html">Fortinet</a></span
-          >
-        </div>
-      </div>
+      <div class="cards-grid">      <div class="card">
+        <span class="card-date">2021-05-01</span>
+        <a class="card-title" href="/posts/installing-fortigate-on-hyper-v-2019.html">Installing FortiGate 7.0.x on Hyper-V 2019</a>
+        <span class="card-excerpt">Fortinet's documentation is pretty terrible. This is especially true for their Hyper-V deployment instructions which leave out multiple steps, and left me frustrated trying to piece together instructions from multiple articles.</span>
+        <span class="card-tags"><a href="/tag/fortinet/index.html">Fortinet</a><a href="/tag/powershell/index.html">PowerShell</a></span>
+      </div></div>
     </div>
 
     <!-- Newspaper variant -->
     <div class="posts-newspaper">
       <ul class="newspaper-list">
-        <li class="newspaper-item">
-          <div class="newspaper-body">
-            <div class="newspaper-title">
-              <a href="/posts/fortigate-7-0-x-with-bell-residential-fibre.html"
-                >FortiGate 7.0.x With Bell Residential Fibre</a
-              >
-            </div>
-            <div class="newspaper-excerpt">
-              I've been using Sophos' UTM since forever, but at work we're
-              moving away from our legacy Cisco ASAs, and to FortiGate. So I'm
-              making the switch at home with an
-            </div>
-          </div>
-          <div class="newspaper-meta">
-            <span class="newspaper-date">2021-05-04</span>
-            <div class="newspaper-tags">
-              <a href="/tag/fortinet/index.html">Fortinet</a>
-            </div>
-          </div>
-        </li>
-        <li class="newspaper-item">
-          <div class="newspaper-body">
-            <div class="newspaper-title">
-              <a
-                href="/posts/fortigate-certificate-request-with-multiple-dns-names.html"
-                >FortiGate 7.0.x certificate request with multiple DNS names</a
-              >
-            </div>
-            <div class="newspaper-excerpt">
-              The lack of clarity in FortiGate's error messages and
-              documentation continues to irk me. The syntax required for it to
-              include multiple DNS names in the certifi
-            </div>
-          </div>
-          <div class="newspaper-meta">
-            <span class="newspaper-date">2021-05-02</span>
-            <div class="newspaper-tags">
-              <a href="/tag/fortinet/index.html">Fortinet</a>
-            </div>
-          </div>
-        </li>
-        <li class="newspaper-item">
-          <div class="newspaper-body">
-            <div class="newspaper-title">
-              <a href="/posts/installing-fortigate-on-hyper-v-2019.html"
-                >Installing FortiGate 7.0.x on Hyper-V 2019</a
-              >
-            </div>
-            <div class="newspaper-excerpt">
-              Fortinet's documentation is pretty terrible. This is especially
-              true for their Hyper-V deployment instructions which leave out
-              multiple steps, and left me frustrated trying to piece together
-              instructions from multiple articles.
-            </div>
-          </div>
-          <div class="newspaper-meta">
-            <span class="newspaper-date">2021-05-01</span>
-            <div class="newspaper-tags">
-              <a href="/tag/fortinet/index.html">Fortinet</a
-              ><a href="/tag/powershell/index.html">PowerShell</a>
-            </div>
-          </div>
-        </li>
-        <li class="newspaper-item">
-          <div class="newspaper-body">
-            <div class="newspaper-title">
-              <a href="/posts/initial-impressions-of-fortisiem-6-1.html"
-                >Initial Impressions of FortiSIEM 6.1</a
-              >
-            </div>
-            <div class="newspaper-excerpt">
-              We're finally at the point where our infrastructure is cleaned up
-              enough that getting usable signal through all the logspew is
-              finally possible. After comparing
-            </div>
-          </div>
-          <div class="newspaper-meta">
-            <span class="newspaper-date">2021-02-11</span>
-            <div class="newspaper-tags">
-              <a href="/tag/fortinet/index.html">Fortinet</a>
-            </div>
-          </div>
-        </li>
+              <li class="newspaper-item">
+        <div class="newspaper-body">
+          <div class="newspaper-title"><a href="/posts/installing-fortigate-on-hyper-v-2019.html">Installing FortiGate 7.0.x on Hyper-V 2019</a></div>
+          <div class="newspaper-excerpt">Fortinet's documentation is pretty terrible. This is especially true for their Hyper-V deployment instructions which leave out multiple steps, and left me frustrated trying to piece together instructions from multiple articles.</div>
+        </div>
+        <div class="newspaper-meta">
+          <span class="newspaper-date">2021-05-01</span>
+          <div class="newspaper-tags"><a href="/tag/fortinet/index.html">Fortinet</a><a href="/tag/powershell/index.html">PowerShell</a></div>
+        </div>
+      </li>
       </ul>
     </div>
 
@@ -728,8 +538,7 @@
 
     <script
       src="/site.js"
-      integrity="sha256-Z/iKGpIqbH6TP6YGsc4RumJjQfeiJuNTL2OnOM16tck="
-      crossorigin="anonymous"
-    ></script>
+      integrity="sha256-0mFQ3XT8fIuA6C1Rtrl1FADO+T+PRXPVkmB8uxrbR+0="
+      crossorigin="anonymous"></script>
   </body>
 </html>
