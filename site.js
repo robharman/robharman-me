@@ -68,3 +68,10 @@
     }
   });
 }());
+
+(function () {
+  var s = document.createElement('script');
+  s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+  s.dataset.cfBeacon = '{"token":"62cf1d6684734ec8b79aa7dfafcdf9a1"}';
+  document.head.appendChild(s);
+}());

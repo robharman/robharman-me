@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -13,7 +13,7 @@
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230e0f11'/><text x='16' y='23' font-family='monospace' font-size='17' font-weight='bold' fill='%23e8e4de' text-anchor='middle'>rh</text></svg>"
       type="image/svg+xml" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{PAGE_TITLE}}" />
+    <meta property="og:title" content="robharman.me" />
     <meta
       property="og:description"
       content="Posts by Rob Harman — IT infrastructure, networking, and occasional adventures." />
@@ -436,6 +436,15 @@
       .site-footer a:hover {
         color: var(--fg-muted);
       }
+      .site-build {
+        max-width: 900px;
+        margin: 4px auto 0;
+        padding: 0 24px;
+        font-family: var(--mono);
+        font-size: 10px;
+        color: var(--fg-dim);
+        letter-spacing: 0.04em;
+      }
 
       @media (max-width: 600px) {
         .newspaper-item {
@@ -454,15 +463,6 @@
         .terminal-tags {
           justify-content: flex-start;
         }
-      }
-      .site-build {
-        max-width: 900px;
-        margin: 4px auto 0;
-        padding: 0 24px;
-        font-family: var(--mono);
-        font-size: 10px;
-        color: var(--fg-dim);
-        letter-spacing: 0.04em;
       }
     </style>
   </head>
@@ -483,9 +483,27 @@
         <div class="nav-controls">
           <span class="picker-label">Style:</span>
           <div class="picker">
-            <button type="button" class="tab-btn" data-variant="terminal" title="terminal">🖥️</button>
-            <button type="button" class="tab-btn" data-variant="cards" title="card">🃏</button>
-            <button type="button" class="tab-btn" data-variant="newspaper" title="newspaper">📰</button>
+            <button
+              type="button"
+              class="tab-btn"
+              data-variant="terminal"
+              title="terminal">
+              🖥️
+            </button>
+            <button
+              type="button"
+              class="tab-btn"
+              data-variant="cards"
+              title="card">
+              🃏
+            </button>
+            <button
+              type="button"
+              class="tab-btn"
+              data-variant="newspaper"
+              title="newspaper">
+              📰
+            </button>
           </div>
           <button type="button" class="dark-btn" id="dark-btn">&#9728;</button>
         </div>
@@ -545,9 +563,7 @@
               >FortiGate 7.0.x With Bell Residential Fibre</a
             ></span
           >
-          <span class="terminal-tags"
-            ><a href="/tag/fortinet/index.html">Fortinet</a></span
-          >
+          <span class="terminal-tags"></span>
         </div>
         <div class="terminal-row">
           <span class="terminal-date">2021-05-02</span>
@@ -557,9 +573,7 @@
               >FortiGate 7.0.x certificate request with multiple DNS names</a
             ></span
           >
-          <span class="terminal-tags"
-            ><a href="/tag/fortinet/index.html">Fortinet</a></span
-          >
+          <span class="terminal-tags"></span>
         </div>
         <div class="terminal-row">
           <span class="terminal-date">2021-05-01</span>
@@ -576,8 +590,8 @@
         <div class="terminal-row">
           <span class="terminal-date">2021-03-18</span>
           <span class="terminal-title"
-            ><a href="/posts/recusrive-dsc-composite-modules.html"
-              >Recusrive DSC Composite Modules</a
+            ><a href="/posts/recursive-dsc-composite-modules.html"
+              >Recursive DSC Composite Modules</a
             ></span
           >
           <span class="terminal-tags"
@@ -591,9 +605,7 @@
               >Initial Impressions of FortiSIEM 6.1</a
             ></span
           >
-          <span class="terminal-tags"
-            ><a href="/tag/fortinet/index.html">Fortinet</a></span
-          >
+          <span class="terminal-tags"></span>
         </div>
         <div class="terminal-row">
           <span class="terminal-date">2020-10-08</span>
@@ -675,9 +687,7 @@
             away from our legacy Cisco ASAs, and to FortiGate. So I'm making the
             switch at home with an
           </span>
-          <span class="card-tags"
-            ><a href="/tag/fortinet/index.html">Fortinet</a></span
-          >
+          <span class="card-tags"></span>
         </div>
         <div class="card">
           <span class="card-date">2021-05-02</span>
@@ -691,9 +701,7 @@
             continues to irk me. The syntax required for it to include multiple
             DNS names in the certifi</span
           >
-          <span class="card-tags"
-            ><a href="/tag/fortinet/index.html">Fortinet</a></span
-          >
+          <span class="card-tags"></span>
         </div>
         <div class="card">
           <span class="card-date">2021-05-01</span>
@@ -717,8 +725,8 @@
           <span class="card-date">2021-03-18</span>
           <a
             class="card-title"
-            href="/posts/recusrive-dsc-composite-modules.html"
-            >Recusrive DSC Composite Modules</a
+            href="/posts/recursive-dsc-composite-modules.html"
+            >Recursive DSC Composite Modules</a
           >
           <span class="card-excerpt"
             >I've been learning a lot about how to use Azure Automation to
@@ -741,9 +749,7 @@
             enough that getting usable signal through all the logspew is finally
             possible. After comparing</span
           >
-          <span class="card-tags"
-            ><a href="/tag/fortinet/index.html">Fortinet</a></span
-          >
+          <span class="card-tags"></span>
         </div>
         <div class="card">
           <span class="card-date">2020-10-08</span>
@@ -846,9 +852,7 @@
           </div>
           <div class="newspaper-meta">
             <span class="newspaper-date">2021-05-04</span>
-            <div class="newspaper-tags">
-              <a href="/tag/fortinet/index.html">Fortinet</a>
-            </div>
+            <div class="newspaper-tags"></div>
           </div>
         </li>
         <li class="newspaper-item">
@@ -867,9 +871,7 @@
           </div>
           <div class="newspaper-meta">
             <span class="newspaper-date">2021-05-02</span>
-            <div class="newspaper-tags">
-              <a href="/tag/fortinet/index.html">Fortinet</a>
-            </div>
+            <div class="newspaper-tags"></div>
           </div>
         </li>
         <li class="newspaper-item">
@@ -897,8 +899,8 @@
         <li class="newspaper-item">
           <div class="newspaper-body">
             <div class="newspaper-title">
-              <a href="/posts/recusrive-dsc-composite-modules.html"
-                >Recusrive DSC Composite Modules</a
+              <a href="/posts/recursive-dsc-composite-modules.html"
+                >Recursive DSC Composite Modules</a
               >
             </div>
             <div class="newspaper-excerpt">
@@ -929,9 +931,7 @@
           </div>
           <div class="newspaper-meta">
             <span class="newspaper-date">2021-02-11</span>
-            <div class="newspaper-tags">
-              <a href="/tag/fortinet/index.html">Fortinet</a>
-            </div>
+            <div class="newspaper-tags"></div>
           </div>
         </li>
         <li class="newspaper-item">
@@ -971,7 +971,7 @@
 
     <script
       src="/site.js"
-      integrity="sha256-Z/iKGpIqbH6TP6YGsc4RumJjQfeiJuNTL2OnOM16tck="
+      integrity="sha256-0mFQ3XT8fIuA6C1Rtrl1FADO+T+PRXPVkmB8uxrbR+0="
       crossorigin="anonymous"></script>
   </body>
 </html>
