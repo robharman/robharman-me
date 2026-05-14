@@ -1,25 +1,25 @@
-﻿<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
       Set Microsoft Office fonts and templates via GPO — robharman.me
     </title>
     <link
       rel="canonical"
       href="https://robharman.me/set-fonts-and-templates-in-ms-office-via-gpo/"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+   >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
       rel="preconnect"
       href="https://fonts.gstatic.com"
       crossorigin="anonymous"
-    />
+   >
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
-    />
+   >
     <style>
       *,
       *::before,
@@ -526,20 +526,20 @@
           HKCU, the Key Path is SoftwareMicrosoftOffice14.0WordOptions, the
           Value Type is aREG_DWORD, and the value is a Decimal 1. On the Common
           tab, set things so run in logged-on user’s security context, and that
-          should be all for Word and Powerpoint.<br />
-          MigrateNormalOnFirstBoot properties<br />
+          should be all for Word and Powerpoint.<br>
+          MigrateNormalOnFirstBoot properties<br>
           To get Outlook set up, we need to create a new policy under User
           Configuration&gt; Preferences&gt; Windows Settings&gt; Registry.
           Create a new Registry Wizard based policy. Since this also needs to
           evaluate things based on the user, you’ll need to have the Outlook
           registry key above in your local registry. HKCU only works when you’re
           locally logged in, so browsing another computer doesn’t work, and
-          doing it by hand with new Registry items is annoying and inelegant.<br />
+          doing it by hand with new Registry items is annoying and inelegant.<br>
           This means you either need to add the key to your DC, or, ideally, be
           running RSAT and remotely configuring the GPO so you don’t have to,
           and since you shouldn’t have Office installed on your DC. Browse
           to:HKCUSoftwareMicrosoftOfficeOffice14.0CommonMailSettingsand select
-          that key, and all subkeys. Click Finish, and that’s that.<br />
+          that key, and all subkeys. Click Finish, and that’s that.<br>
           The same steps will work with Windows Vista, 7, 8 and with Office
           2007, as long as you update the paths as appropriate.
         </p>
