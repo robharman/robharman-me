@@ -5,7 +5,7 @@
     <link>https://robharman.me</link>
     <description>Posts by Rob Harman — IT infrastructure, networking, and occasional adventures.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 08 May 2026 00:40:53 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 14 May 2026 05:22:54 GMT</lastBuildDate>
     <atom:link href="https://robharman.me/rss.xml" rel="self" type="application/rss+xml"/>
   <item>
     <title>On-Prem Azure Pipelines Pester Tests Fail with ##[error]Unhandled: spawn pwsh ENOENT</title>
@@ -13,7 +13,7 @@
     <guid isPermaLink="true">https://robharman.me/posts/on-prem-azure-pipelines-build-pester-tests-fail-with-error-unhandled-spawn-pwsh-enoent.html</guid>
     <pubDate>Fri, 18 Mar 2022 00:00:00 GMT</pubDate>
     <description>I've been playing around with Azure DevOps Pipelines in my quest to become a better programmer. After spinning up an on-prem agent running on Server 2019, I kep</description>
-
+    <category>Azure</category>
   </item>
   <item>
     <title>The constantly moving goalposts of Azure Automation's DSC Validation</title>
@@ -21,7 +21,7 @@
     <guid isPermaLink="true">https://robharman.me/posts/the-constantly-moving-goalposts-of-azure-automations-dsc-validation.html</guid>
     <pubDate>Mon, 15 Nov 2021 00:00:00 GMT</pubDate>
     <description>For the better part of the 2020 I've been using a defaults resource within my DSC modules as outlined in THIS post. This suddenly stopped working, failing with </description>
-
+    <category>Azure</category>
   </item>
   <item>
     <title>Azure Automation Hybrid Runbook Worker Login Failure: ClientCertificateCredential 'keyset does not exist'</title>
@@ -29,7 +29,7 @@
     <guid isPermaLink="true">https://robharman.me/posts/certificate-replacement-on-non-system-azure-automation-runbook-workers.html</guid>
     <pubDate>Sun, 10 Oct 2021 00:00:00 GMT</pubDate>
     <description>If you're running a non-SYSTEM Hybrid Runbook worker and you replace your RunAs certificate, you may encounter a login failure with ClientCertificateCredential </description>
-
+    <category>Azure</category>
   </item>
   <item>
     <title>FortiGate 7.0.x With Bell Residential Fibre</title>
@@ -57,12 +57,12 @@
     <category>PowerShell</category>
   </item>
   <item>
-    <title>Recusrive DSC Composite Modules</title>
-    <link>https://robharman.me/posts/recusrive-dsc-composite-modules.html</link>
-    <guid isPermaLink="true">https://robharman.me/posts/recusrive-dsc-composite-modules.html</guid>
+    <title>Recursive DSC Composite Modules</title>
+    <link>https://robharman.me/posts/recursive-dsc-composite-modules.html</link>
+    <guid isPermaLink="true">https://robharman.me/posts/recursive-dsc-composite-modules.html</guid>
     <pubDate>Thu, 18 Mar 2021 00:00:00 GMT</pubDate>
     <description>I've been learning a lot about how to use Azure Automation to manage DevOps deployments of our Windows Servers. This has led me to a dozen DSC modules, some wit</description>
-
+    <category>Azure</category>
   </item>
   <item>
     <title>Initial Impressions of FortiSIEM 6.1</title>
@@ -87,6 +87,7 @@
     <pubDate>Wed, 20 Dec 2017 00:00:00 GMT</pubDate>
     <description>After installing a PHP version upgrade, my WordPress site wouldn't load. Instead users were greeted with a 502 Bad Gateway error.</description>
     <category>Linux</category>
+    <category>Nginx</category>
   </item>
   <item>
     <title>Set Microsoft Office fonts and templates via GPO</title>
@@ -104,6 +105,7 @@
     <pubDate>Sun, 01 Apr 2012 00:00:00 GMT</pubDate>
     <description>Another tutorial on how NTFS permissions work.</description>
     <category>Windows</category>
+    <category>NTFS</category>
   </item>
   <item>
     <title>Working around long file and folder names with ICACLS and TAKEOWN</title>
@@ -112,6 +114,7 @@
     <pubDate>Sun, 11 Sep 2011 00:00:00 GMT</pubDate>
     <description>Working around MAX_PATH limitations with ICACLS and TAKEOWN in PowerShell</description>
     <category>Windows</category>
+    <category>NTFS</category>
   </item>
   </channel>
 </rss>

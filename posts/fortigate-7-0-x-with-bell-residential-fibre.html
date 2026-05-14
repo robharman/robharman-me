@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -6,40 +6,32 @@
     <title>FortiGate 7.0.x With Bell Residential Fibre — robharman.me</title>
     <link
       rel="canonical"
-      href="https://robharman.me/fortigate-7-0-x-with-bell-residential-fibre/"
-    />
+      href="https://robharman.me/fortigate-7-0-x-with-bell-residential-fibre/" />
     <meta
       name="description"
-      content="I've been using Sophos' UTM since forever, but at work we're moving away from our legacy Cisco ASAs, and to FortiGate. So I'm making the switch at home with an "
-    />
+      content="I've been using Sophos' UTM since forever, but at work we're moving away from our legacy Cisco ASAs, and to FortiGate. So I'm making the switch at home with an " />
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230e0f11'/><text x='16' y='23' font-family='monospace' font-size='17' font-weight='bold' fill='%23e8e4de' text-anchor='middle'>rh</text></svg>"
-      type="image/svg+xml"
-    />
+      type="image/svg+xml" />
     <meta property="og:type" content="article" />
     <meta
       property="og:title"
-      content="FortiGate 7.0.x With Bell Residential Fibre — robharman.me"
-    />
+      content="FortiGate 7.0.x With Bell Residential Fibre — robharman.me" />
     <meta
       property="og:description"
-      content="I've been using Sophos' UTM since forever, but at work we're moving away from our legacy Cisco ASAs, and to FortiGate. So I'm making the switch at home with an "
-    />
+      content="I've been using Sophos' UTM since forever, but at work we're moving away from our legacy Cisco ASAs, and to FortiGate. So I'm making the switch at home with an " />
     <meta
       property="og:url"
-      content="https://robharman.me/posts/fortigate-7-0-x-with-bell-residential-fibre/"
-    />
+      content="https://robharman.me/posts/fortigate-7-0-x-with-bell-residential-fibre/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       rel="preconnect"
       href="https://fonts.gstatic.com"
-      crossorigin="anonymous"
-    />
+      crossorigin="anonymous" />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
     <style>
       *,
       *::before,
@@ -437,13 +429,25 @@
         <div class="nav-controls">
           <span class="picker-label">Style:</span>
           <div class="picker">
-            <button type="button" class="tab-btn" data-variant="terminal" title="terminal">
+            <button
+              type="button"
+              class="tab-btn"
+              data-variant="terminal"
+              title="terminal">
               🖥️
             </button>
-            <button type="button" class="tab-btn" data-variant="cards" title="card">
+            <button
+              type="button"
+              class="tab-btn"
+              data-variant="cards"
+              title="card">
               🃏
             </button>
-            <button type="button" class="tab-btn" data-variant="newspaper" title="newspaper">
+            <button
+              type="button"
+              class="tab-btn"
+              data-variant="newspaper"
+              title="newspaper">
               📰
             </button>
           </div>
@@ -480,7 +484,7 @@
           Since you're going to be using a dynamic gateway you need to enable it
           in your router config on the FortiGate:
         </p>
-        <pre><code>config routter static
+        <pre><code>config router static
     edit 1
         set device &lt;port for your WAN connection&gt;
         set dynamic-gateway enable
