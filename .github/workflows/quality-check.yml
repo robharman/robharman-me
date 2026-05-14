@@ -16,7 +16,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - run: npm install -g cspell@latest
 
@@ -30,7 +30,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - run: npm install -g html-validate
 
@@ -44,5 +44,5 @@ jobs:
 
       - uses: lycheeverse/lychee-action@v2
         with:
-          args: --offline --base . --no-progress '**/*.html'
+          args: --offline --root-dir . --no-progress '**/*.html'
           fail: true

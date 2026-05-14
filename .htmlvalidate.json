@@ -1,0 +1,6 @@
+{
+  "root": true,
+  "rules": {
+    "long-title": ["error", { "maxlength": 100 }]
+  }
+}
