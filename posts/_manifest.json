@@ -1,0 +1,119 @@
+[
+  {
+    "slug": "on-prem-azure-pipelines-build-pester-tests-fail-with-error-unhandled-spawn-pwsh-enoent",
+    "title": "On-Prem Azure Pipelines Pester Tests Fail with ##[error]Unhandled: spawn pwsh ENOENT",
+    "dateISO": "2022-03-18",
+    "dateLong": "2022 Mar 18",
+    "dateMono": "2022-03-18",
+    "tags": ["Azure"],
+    "excerpt": "I've been playing around with Azure DevOps Pipelines in my quest to become a better programmer. After spinning up an on-prem agent running on Server 2019, I kep"
+  },
+  {
+    "slug": "the-constantly-moving-goalposts-of-azure-automations-dsc-validation",
+    "title": "The constantly moving goalposts of Azure Automation's DSC Validation",
+    "dateISO": "2021-11-15",
+    "dateLong": "2021 Nov 15",
+    "dateMono": "2021-11-15",
+    "tags": ["Azure"],
+    "excerpt": "For the better part of the 2020 I've been using a defaults resource within my DSC modules as outlined in THIS post. This suddenly stopped working, failing with "
+  },
+  {
+    "slug": "certificate-replacement-on-non-system-azure-automation-runbook-workers",
+    "title": "Azure Automation Hybrid Runbook Worker Login Failure: ClientCertificateCredential 'keyset does not exist'",
+    "dateISO": "2021-10-10",
+    "dateLong": "2021 Oct 10",
+    "dateMono": "2021-10-10",
+    "tags": ["Azure"],
+    "excerpt": "If you're running a non-SYSTEM Hybrid Runbook worker and you replace your RunAs certificate, you may encounter a login failure with ClientCertificateCredential "
+  },
+  {
+    "slug": "fortigate-7-0-x-with-bell-residential-fibre",
+    "title": "FortiGate 7.0.x With Bell Residential Fibre",
+    "dateISO": "2021-05-04",
+    "dateLong": "2021 May 04",
+    "dateMono": "2021-05-04",
+    "tags": [],
+    "excerpt": "I've been using Sophos' UTM since forever, but at work we're moving away from our legacy Cisco ASAs, and to FortiGate. So I'm making the switch at home with an "
+  },
+  {
+    "slug": "fortigate-certificate-request-with-multiple-dns-names",
+    "title": "FortiGate 7.0.x certificate request with multiple DNS names",
+    "dateISO": "2021-05-02",
+    "dateLong": "2021 May 02",
+    "dateMono": "2021-05-02",
+    "tags": [],
+    "excerpt": "The lack of clarity in FortiGate's error messages and documentation continues to irk me. The syntax required for it to include multiple DNS names in the certifi"
+  },
+  {
+    "slug": "installing-fortigate-on-hyper-v-2019",
+    "title": "Installing FortiGate 7.0.x on Hyper-V 2019",
+    "dateISO": "2021-05-01",
+    "dateLong": "2021 May 01",
+    "dateMono": "2021-05-01",
+    "tags": ["Fortinet", "PowerShell"],
+    "excerpt": "Fortinet's documentation is pretty terrible. This is especially true for their Hyper-V deployment instructions which leave out multiple steps, and left me frustrated trying to piece together instructions from multiple articles."
+  },
+  {
+    "slug": "recusrive-dsc-composite-modules",
+    "title": "Recusrive DSC Composite Modules",
+    "dateISO": "2021-03-18",
+    "dateLong": "2021 Mar 18",
+    "dateMono": "2021-03-18",
+    "tags": ["Azure"],
+    "excerpt": "I've been learning a lot about how to use Azure Automation to manage DevOps deployments of our Windows Servers. This has led me to a dozen DSC modules, some wit"
+  },
+  {
+    "slug": "initial-impressions-of-fortisiem-6-1",
+    "title": "Initial Impressions of FortiSIEM 6.1",
+    "dateISO": "2021-02-11",
+    "dateLong": "2021 Feb 11",
+    "dateMono": "2021-02-11",
+    "tags": [],
+    "excerpt": "We're finally at the point where our infrastructure is cleaned up enough that getting usable signal through all the logspew is finally possible. After comparing"
+  },
+  {
+    "slug": "raja-ampat-and-the-banda-sea",
+    "title": "Raja Ampat and the Banda Sea",
+    "dateISO": "2020-10-08",
+    "dateLong": "2020 Oct 08",
+    "dateMono": "2020-10-08",
+    "tags": ["Diving"],
+    "excerpt": "In September, 2019 I spent 10 days aboard the MV Ambai, traveling through Raja Ampat and the Banda sea. It was incredible to behold the breadth of wildlife, and the sprawl of plastic waste."
+  },
+  {
+    "slug": "nginx-502-bad-gateway-after-php-version-upgrade",
+    "title": "Nginx 502 Bad Gateway after PHP version upgrade.",
+    "dateISO": "2017-12-20",
+    "dateLong": "2017 Dec 20",
+    "dateMono": "2017-12-20",
+    "tags": ["Linux", "Nginx"],
+    "excerpt": "After installing a PHP version upgrade, my WordPress site wouldn't load. Instead users were greeted with a 502 Bad Gateway error."
+  },
+  {
+    "slug": "set-fonts-and-templates-in-ms-office-via-gpo",
+    "title": "Set Microsoft Office fonts and templates via GPO",
+    "dateISO": "2012-12-19",
+    "dateLong": "2012 Dec 19",
+    "dateMono": "2012-12-19",
+    "tags": ["Windows", "GPO"],
+    "excerpt": "Note that this process was originally written for Office 2010, but works with minor modifications for up to Office 2016, and Office 365. You must update the Off"
+  },
+  {
+    "slug": "confusion-with-ntfs-permissions",
+    "title": "Confusion with NTFS Permissions",
+    "dateISO": "2012-04-01",
+    "dateLong": "2012 Apr 01",
+    "dateMono": "2012-04-01",
+    "tags": ["Windows", "NTFS"],
+    "excerpt": "Another tutorial on how NTFS permissions work."
+  },
+  {
+    "slug": "max_path_icacls_takeown",
+    "title": "Working around long file and folder names with ICACLS and TAKEOWN",
+    "dateISO": "2011-09-11",
+    "dateLong": "2011 Sep 11",
+    "dateMono": "2011-09-11",
+    "tags": ["Windows", "NTFS"],
+    "excerpt": "Working around MAX_PATH limitations with ICACLS and TAKEOWN in PowerShell"
+  }
+]

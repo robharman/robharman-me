@@ -1,0 +1,592 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PowerShell — robharman.me</title>
+    <meta name="description" content="Posts tagged PowerShell — robharman.me" />
+    <link rel="canonical" href="https://robharman.me/tag/powershell/" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230e0f11'/><text x='16' y='23' font-family='monospace' font-size='17' font-weight='bold' fill='%23e8e4de' text-anchor='middle'>rh</text></svg>"
+      type="image/svg+xml"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{PAGE_TITLE}}" />
+    <meta
+      property="og:description"
+      content="Posts tagged PowerShell — robharman.me"
+    />
+    <meta property="og:url" content="https://robharman.me/tag/powershell/" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="robharman.me"
+      href="/rss.xml"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        font-size: 16px;
+      }
+      body {
+        min-height: 100vh;
+        transition:
+          background 0.2s,
+          color 0.2s;
+      }
+      :root {
+        --bg: #0e0f11;
+        --bg-sub: #161719;
+        --border: #2a2b2e;
+        --fg: #e8e4de;
+        --fg-muted: #6b6a67;
+        --fg-dim: #3e3d3b;
+        --accent: oklch(70% 0.12 195);
+        --accent-bg: oklch(25% 0.06 195);
+        --card-bg: #161719;
+        --card-hover: #1c1d20;
+        --mono: "JetBrains Mono", monospace;
+        --sans: "DM Sans", sans-serif;
+      }
+      body.light {
+        --bg: #f5f2ee;
+        --bg-sub: #edeae5;
+        --border: #d8d3cc;
+        --fg: #18181a;
+        --fg-muted: #888480;
+        --fg-dim: #ccc8c2;
+        --accent: oklch(38% 0.12 195);
+        --accent-bg: oklch(92% 0.04 195);
+        --card-bg: #ffffff;
+        --card-hover: #faf8f5;
+      }
+      body {
+        background: var(--bg);
+        color: var(--fg);
+      }
+
+      /* ── Nav ──────────────────────────────────────────────────── */
+      .site-nav {
+        border-bottom: 1px solid var(--border);
+      }
+      .site-nav-inner {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 18px 24px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .site-logo {
+        font-family: var(--mono);
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--fg);
+        text-decoration: none;
+      }
+      .nav-links {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+      .nav-links a {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--fg-muted);
+        text-decoration: none;
+        letter-spacing: 0.04em;
+        transition: color 0.15s;
+      }
+      .nav-links a:hover {
+        color: var(--fg);
+      }
+      .nav-controls {
+        margin-left: auto;
+        display: flex;
+        gap: 6px;
+        align-items: center;
+      }
+      .picker {
+        display: flex;
+        border: 1px solid var(--border);
+        overflow: hidden;
+      }
+      .picker button {
+        font-size: 14px;
+        padding: 2px 7px;
+        cursor: pointer;
+        background: transparent;
+        color: var(--fg-muted);
+        border: none;
+        border-right: 1px solid var(--border);
+        transition:
+          background 0.15s,
+          color 0.15s;
+      }
+      .picker button:last-child {
+        border-right: none;
+      }
+      .picker button.active {
+        background: var(--fg);
+        color: var(--bg);
+      }
+      .picker-label {
+        font-family: var(--mono);
+        font-size: 10px;
+        color: var(--fg-muted);
+        letter-spacing: 0.04em;
+      }
+      .dark-btn {
+        font-family: var(--mono);
+        font-size: 10px;
+        padding: 3px 9px;
+        cursor: pointer;
+        background: transparent;
+        border: 1px solid var(--border);
+        color: var(--fg-muted);
+        transition: color 0.15s;
+      }
+
+      /* ── Page header ─────────────────────────────────────────── */
+      .page-header {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px 24px 0;
+      }
+      .page-header h1 {
+        font-family: var(--mono);
+        font-size: 13px;
+        color: var(--fg-muted);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+      }
+
+      /* ── Variant visibility ───────────────────────────────────── */
+      .view-terminal .posts-cards,
+      .view-terminal .posts-newspaper,
+      .view-cards .posts-terminal,
+      .view-cards .posts-newspaper,
+      .view-newspaper .posts-terminal,
+      .view-newspaper .posts-cards {
+        display: none;
+      }
+
+      /* Default (no view class yet — before JS runs): show newspaper */
+      body:not(.view-terminal):not(.view-cards):not(.view-newspaper)
+        .posts-terminal,
+      body:not(.view-terminal):not(.view-cards):not(.view-newspaper)
+        .posts-cards {
+        display: none;
+      }
+
+      /* ── TERMINAL variant ─────────────────────────────────────── */
+      .posts-terminal {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px 80px;
+        font-family: var(--mono);
+      }
+      .terminal-row {
+        display: grid;
+        grid-template-columns: 100px 1fr auto;
+        gap: 0 20px;
+        align-items: baseline;
+        padding: 8px 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .terminal-row:first-child {
+        border-top: 1px solid var(--border);
+      }
+      .terminal-date {
+        font-size: 11px;
+        color: var(--fg-dim);
+        letter-spacing: 0.04em;
+      }
+      .terminal-title a {
+        font-size: 13px;
+        color: var(--fg);
+        text-decoration: none;
+        letter-spacing: 0.01em;
+        transition: color 0.15s;
+      }
+      .terminal-title a:hover {
+        color: var(--accent);
+      }
+      .terminal-tags {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      .terminal-tags a {
+        font-size: 10px;
+        color: var(--accent);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+      .terminal-tags a:hover {
+        text-decoration: underline;
+      }
+
+      /* ── CARDS variant ────────────────────────────────────────── */
+      .posts-cards {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px 80px;
+      }
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 16px;
+      }
+      .card {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        padding: 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        transition: background 0.15s;
+      }
+      .card:hover {
+        background: var(--card-hover);
+      }
+      .card-date {
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--fg-dim);
+        letter-spacing: 0.04em;
+      }
+      .card-title {
+        font-family: var(--sans);
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--fg);
+        line-height: 1.4;
+        text-decoration: none;
+      }
+      .card-title::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+      }
+      .card-excerpt {
+        font-family: var(--sans);
+        font-size: 13px;
+        color: var(--fg-muted);
+        line-height: 1.6;
+        flex: 1;
+      }
+      .card-tags {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        margin-top: auto;
+      }
+      .card-tags a {
+        font-family: var(--mono);
+        font-size: 10px;
+        color: var(--accent);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-decoration: none;
+        position: relative;
+        z-index: 1;
+      }
+      .card-tags a:hover {
+        text-decoration: underline;
+      }
+
+      /* ── NEWSPAPER variant ────────────────────────────────────── */
+      .posts-newspaper {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px 80px;
+      }
+      .newspaper-list {
+        list-style: none;
+      }
+      .newspaper-item {
+        padding: 20px 0;
+        border-bottom: 1px solid var(--border);
+        display: grid;
+        grid-template-columns: 1fr 180px;
+        gap: 16px;
+        align-start: start;
+      }
+      .newspaper-item:first-child {
+        border-top: 1px solid var(--border);
+      }
+      .newspaper-title a {
+        font-family: var(--sans);
+        font-size: 18px;
+        font-weight: 400;
+        color: var(--fg);
+        text-decoration: none;
+        line-height: 1.35;
+        letter-spacing: -0.2px;
+        transition: color 0.15s;
+        display: block;
+        margin-bottom: 8px;
+      }
+      .newspaper-title a:hover {
+        color: var(--accent);
+      }
+      .newspaper-excerpt {
+        font-family: var(--sans);
+        font-size: 14px;
+        color: var(--fg-muted);
+        line-height: 1.6;
+      }
+      .newspaper-meta {
+        text-align: right;
+      }
+      .newspaper-date {
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--fg-muted);
+        letter-spacing: 0.04em;
+        display: block;
+        margin-bottom: 8px;
+      }
+      .newspaper-tags {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      .newspaper-tags a {
+        font-family: var(--mono);
+        font-size: 10px;
+        color: var(--accent);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+      .newspaper-tags a:hover {
+        text-decoration: underline;
+      }
+
+      /* ── Pagination ───────────────────────────────────────────── */
+      .pagination {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px 48px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        font-family: var(--mono);
+        font-size: 12px;
+      }
+      .pagination a {
+        color: var(--fg-muted);
+        text-decoration: none;
+        padding: 4px 8px;
+        border: 1px solid var(--border);
+        transition:
+          color 0.15s,
+          border-color 0.15s;
+      }
+      .pagination a:hover {
+        color: var(--fg);
+        border-color: var(--fg);
+      }
+      .pagination .current {
+        color: var(--fg);
+        border: 1px solid var(--fg);
+        padding: 4px 8px;
+      }
+      .pagination .ellipsis {
+        color: var(--fg-dim);
+      }
+
+      /* ── Footer ───────────────────────────────────────────────── */
+      .site-footer {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 24px;
+        border-top: 1px solid var(--border);
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--fg-dim);
+        display: flex;
+        justify-content: space-between;
+      }
+      .site-footer a {
+        color: var(--fg-dim);
+        text-decoration: none;
+      }
+      .site-footer a:hover {
+        color: var(--fg-muted);
+      }
+
+      @media (max-width: 600px) {
+        .newspaper-item {
+          grid-template-columns: 1fr;
+        }
+        .newspaper-meta {
+          text-align: left;
+        }
+        .newspaper-tags {
+          justify-content: flex-start;
+        }
+        .terminal-row {
+          grid-template-columns: 1fr;
+          gap: 4px;
+        }
+        .terminal-tags {
+          justify-content: flex-start;
+        }
+      }
+      .site-build {
+        max-width: 900px;
+        margin: 4px auto 0;
+        padding: 0 24px;
+        font-family: var(--mono);
+        font-size: 10px;
+        color: var(--fg-dim);
+        letter-spacing: 0.04em;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="site-nav" aria-label="Site navigation">
+      <div class="site-nav-inner">
+        <a href="/index.html" class="site-logo">robharman.me</a>
+        <div class="nav-links">
+          <a href="/readme.html">readme</a>
+          <a
+            href="https://github.com/robharman"
+            target="_blank"
+            rel="noopener noreferrer"
+            >github</a
+          >
+          <a href="/rss.xml">rss</a>
+        </div>
+        <div class="nav-controls">
+          <span class="picker-label">Style:</span>
+          <div class="picker">
+            <button type="button" class="tab-btn" data-variant="terminal" title="terminal">
+              🖥️
+            </button>
+            <button type="button" class="tab-btn" data-variant="cards" title="card">
+              🃏
+            </button>
+            <button type="button" class="tab-btn" data-variant="newspaper" title="newspaper">
+              📰
+            </button>
+          </div>
+          <button type="button" class="dark-btn" id="dark-btn">&#9728;</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="page-header">
+      <h1>Tag: PowerShell</h1>
+    </div>
+
+    <!-- Terminal variant -->
+    <div class="posts-terminal">
+      <div class="terminal-rows">
+        <div class="terminal-row">
+          <span class="terminal-date">2021-05-01</span>
+          <span class="terminal-title"
+            ><a href="/posts/installing-fortigate-on-hyper-v-2019.html"
+              >Installing FortiGate 7.0.x on Hyper-V 2019</a
+            ></span
+          >
+          <span class="terminal-tags"
+            ><a href="/tag/fortinet/index.html">Fortinet</a
+            ><a href="/tag/powershell/index.html">PowerShell</a></span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Cards variant -->
+    <div class="posts-cards">
+      <div class="cards-grid">
+        <div class="card">
+          <span class="card-date">2021-05-01</span>
+          <a
+            class="card-title"
+            href="/posts/installing-fortigate-on-hyper-v-2019.html"
+            >Installing FortiGate 7.0.x on Hyper-V 2019</a
+          >
+          <span class="card-excerpt"
+            >Fortinet's documentation is pretty terrible. This is especially
+            true for their Hyper-V deployment instructions which leave out
+            multiple steps, and left me frustrated trying to piece together
+            instructions from multiple articles.</span
+          >
+          <span class="card-tags"
+            ><a href="/tag/fortinet/index.html">Fortinet</a
+            ><a href="/tag/powershell/index.html">PowerShell</a></span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Newspaper variant -->
+    <div class="posts-newspaper">
+      <ul class="newspaper-list">
+        <li class="newspaper-item">
+          <div class="newspaper-body">
+            <div class="newspaper-title">
+              <a href="/posts/installing-fortigate-on-hyper-v-2019.html"
+                >Installing FortiGate 7.0.x on Hyper-V 2019</a
+              >
+            </div>
+            <div class="newspaper-excerpt">
+              Fortinet's documentation is pretty terrible. This is especially
+              true for their Hyper-V deployment instructions which leave out
+              multiple steps, and left me frustrated trying to piece together
+              instructions from multiple articles.
+            </div>
+          </div>
+          <div class="newspaper-meta">
+            <span class="newspaper-date">2021-05-01</span>
+            <div class="newspaper-tags">
+              <a href="/tag/fortinet/index.html">Fortinet</a
+              ><a href="/tag/powershell/index.html">PowerShell</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="pagination"></div>
+
+    <footer class="site-footer">
+      <span>robharman.me &copy; 2026</span>
+      <span><a href="/rss.xml">RSS</a></span>
+    </footer>
+    <p class="site-build">{{COMMIT_HASH}}</p>
+
+    <script
+      src="/site.js"
+      integrity="sha256-Z/iKGpIqbH6TP6YGsc4RumJjQfeiJuNTL2OnOM16tck="
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

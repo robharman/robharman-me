@@ -1,0 +1,1203 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raja Ampat and the Banda Sea — robharman.me</title>
+    <link
+      rel="canonical"
+      href="https://robharman.me/raja-ampat-and-the-banda-sea/"
+    />
+    <meta
+      name="description"
+      content="In September, 2019 I spent 10 days aboard the MV Ambai, traveling through Raja Ampat and the Banda sea. It was incredible to behold the breadth of wildlife, and the sprawl of plastic waste."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230e0f11'/><text x='16' y='23' font-family='monospace' font-size='17' font-weight='bold' fill='%23e8e4de' text-anchor='middle'>rh</text></svg>"
+      type="image/svg+xml"
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="Raja Ampat and the Banda Sea — robharman.me"
+    />
+    <meta
+      property="og:description"
+      content="In September, 2019 I spent 10 days aboard the MV Ambai, traveling through Raja Ampat and the Banda sea. It was incredible to behold the breadth of wildlife, and the sprawl of plastic waste."
+    />
+    <meta
+      property="og:url"
+      content="https://robharman.me/posts/raja-ampat-and-the-banda-sea/"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        font-size: 16px;
+      }
+      body {
+        min-height: 100vh;
+        transition:
+          background 0.2s,
+          color 0.2s;
+      }
+      :root {
+        --bg: #0e0f11;
+        --bg-sub: #161719;
+        --border: #2a2b2e;
+        --fg: #e8e4de;
+        --fg-muted: #6b6a67;
+        --fg-dim: #3e3d3b;
+        --accent: oklch(70% 0.12 195);
+        --accent-bg: oklch(25% 0.06 195);
+        --code-bg: #13151a;
+        --code-fg: #a8d8c8;
+        --mono: "JetBrains Mono", monospace;
+        --sans: "DM Sans", sans-serif;
+      }
+      body.light {
+        --bg: #f5f2ee;
+        --bg-sub: #edeae5;
+        --border: #d8d3cc;
+        --fg: #18181a;
+        --fg-muted: #888480;
+        --fg-dim: #ccc8c2;
+        --accent: oklch(38% 0.12 195);
+        --accent-bg: oklch(92% 0.04 195);
+        --code-bg: #e8e4de;
+        --code-fg: oklch(35% 0.12 195);
+      }
+      body {
+        background: var(--bg);
+        color: var(--fg);
+      }
+      .site-nav {
+        border-bottom: 1px solid var(--border);
+      }
+      .site-nav-inner {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 18px 24px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .site-logo {
+        font-family: var(--mono);
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--fg);
+        text-decoration: none;
+      }
+      .nav-links {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+      .nav-links a {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--fg-muted);
+        text-decoration: none;
+        letter-spacing: 0.04em;
+        transition: color 0.15s;
+      }
+      .nav-links a:hover {
+        color: var(--fg);
+      }
+      .nav-controls {
+        margin-left: auto;
+        display: flex;
+        gap: 6px;
+        align-items: center;
+      }
+      .picker {
+        display: flex;
+        border: 1px solid var(--border);
+        overflow: hidden;
+      }
+      .picker button {
+        font-size: 14px;
+        padding: 2px 7px;
+        cursor: pointer;
+        background: transparent;
+        color: var(--fg-muted);
+        border: none;
+        border-right: 1px solid var(--border);
+        transition:
+          background 0.15s,
+          color 0.15s;
+      }
+      .picker button:last-child {
+        border-right: none;
+      }
+      .picker button.active {
+        background: var(--fg);
+        color: var(--bg);
+      }
+      .picker-label {
+        font-family: var(--mono);
+        font-size: 10px;
+        color: var(--fg-muted);
+        letter-spacing: 0.04em;
+      }
+      .dark-btn {
+        font-family: var(--mono);
+        font-size: 10px;
+        padding: 3px 9px;
+        cursor: pointer;
+        background: transparent;
+        border: 1px solid var(--border);
+        color: var(--fg-muted);
+        transition: color 0.15s;
+      }
+      .post-wrap {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 48px 24px 80px;
+      }
+      .post-meta {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--fg-muted);
+        letter-spacing: 0.05em;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+      }
+      .post-meta .sep {
+        color: var(--fg-dim);
+      }
+      .post-tag {
+        font-size: 10px;
+        color: var(--accent);
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+      }
+      h1.post-title {
+        font-family: var(--sans);
+        font-size: 26px;
+        font-weight: 400;
+        line-height: 1.35;
+        color: var(--fg);
+        margin-bottom: 40px;
+        letter-spacing: -0.3px;
+        text-wrap: pretty;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 32px;
+      }
+      .post-body {
+        font-family: var(--sans);
+        font-size: 16px;
+        line-height: 1.8;
+        color: var(--fg);
+      }
+      .post-body p {
+        margin-bottom: 20px;
+      }
+      .post-body h2 {
+        font-size: 19px;
+        font-weight: 500;
+        margin: 36px 0 14px;
+        color: var(--fg);
+        letter-spacing: -0.2px;
+      }
+      .post-body h3 {
+        font-size: 16px;
+        font-weight: 500;
+        margin: 28px 0 10px;
+        color: var(--fg-muted);
+      }
+      .post-body ul,
+      .post-body ol {
+        margin: 0 0 20px 20px;
+      }
+      .post-body li {
+        margin-bottom: 6px;
+        line-height: 1.7;
+        color: var(--fg-muted);
+      }
+      .post-body a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid var(--accent-bg);
+      }
+      .post-body a:hover {
+        border-bottom-color: var(--accent);
+      }
+      .post-body hr {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 28px 0;
+      }
+      .post-body em {
+        font-style: italic;
+      }
+      .post-body strong {
+        font-weight: 600;
+      }
+      .post-body blockquote {
+        border-left: 3px solid var(--border);
+        padding-left: 16px;
+        margin: 20px 0;
+        color: var(--fg-muted);
+        font-style: italic;
+      }
+      .post-body code {
+        font-family: var(--mono);
+        font-size: 0.84em;
+        background: var(--code-bg);
+        color: var(--code-fg);
+        padding: 1px 5px;
+        border: 1px solid var(--border);
+      }
+      .post-body pre {
+        background: var(--code-bg);
+        border: 1px solid var(--border);
+        margin: 24px 0;
+        overflow-x: auto;
+        position: relative;
+      }
+      .post-body pre code {
+        display: block;
+        padding: 16px;
+        font-size: 13px;
+        line-height: 1.7;
+        border: none;
+        background: none;
+        color: var(--code-fg);
+        white-space: pre;
+      }
+      .post-body figure {
+        margin: 24px 0;
+      }
+      .post-body figure img {
+        max-width: 100%;
+        height: auto;
+      }
+      .post-body figure figcaption {
+        font-size: 13px;
+        color: var(--fg-muted);
+        margin-top: 8px;
+        font-style: italic;
+      }
+      .post-nav {
+        margin-top: 56px;
+        padding-top: 28px;
+        border-top: 1px solid var(--border);
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+      .post-nav-link {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--fg-muted);
+        text-decoration: none;
+        letter-spacing: 0.03em;
+        line-height: 1.5;
+        transition: color 0.15s;
+        flex: 0 1 calc(50% - 12px);
+        min-width: 0;
+      }
+      .post-nav-link:hover {
+        color: var(--accent);
+      }
+      .post-footer {
+        margin-top: 48px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--fg-dim);
+        display: flex;
+        justify-content: space-between;
+      }
+      .post-footer a {
+        color: var(--fg-dim);
+        text-decoration: none;
+      }
+      .post-footer a:hover {
+        color: var(--fg-muted);
+      }
+      .share-btn {
+        display: block;
+        width: fit-content;
+        margin: 32px auto 0;
+        font-family: var(--mono);
+        font-size: 12px;
+        background: transparent;
+        border: none;
+        color: var(--fg-muted);
+        cursor: pointer;
+        padding: 0;
+        transition: color 0.15s;
+      }
+      .share-btn:hover {
+        color: var(--fg);
+      }
+      /* ── Variant-aware typography ─── */
+      body.view-terminal .post-body {
+        font-family: var(--mono);
+        font-size: 13px;
+        line-height: 1.7;
+      }
+      body.view-terminal h1.post-title {
+        font-family: var(--mono);
+        font-size: 19px;
+        font-weight: 500;
+        letter-spacing: 0;
+      }
+      body.view-terminal .post-body h2,
+      body.view-terminal .post-body h3 {
+        font-family: var(--mono);
+      }
+      /* ── Back-home link ─── */
+      .post-back {
+        display: inline-block;
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.04em;
+        color: var(--fg-muted);
+        text-decoration: none;
+        margin-bottom: 32px;
+        transition: color 0.15s;
+      }
+      .post-back:hover {
+        color: var(--fg);
+      }
+      body.view-cards .post-nav-link {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        padding: 16px 20px;
+        flex: 0 1 calc(50% - 12px);
+        min-width: 0;
+        font-family: var(--sans);
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: -0.1px;
+        line-height: 1.4;
+        transition:
+          background 0.15s,
+          color 0.15s;
+      }
+      body.view-cards .post-nav-link:hover {
+        background: var(--card-hover);
+        color: var(--fg);
+      }
+      body.view-newspaper .post-nav-link {
+        font-family: var(--sans);
+        font-size: 15px;
+        font-weight: 400;
+        letter-spacing: -0.1px;
+        line-height: 1.4;
+      }
+      .site-build {
+        margin-top: 6px;
+        font-family: var(--mono);
+        font-size: 10px;
+        color: var(--fg-dim);
+        letter-spacing: 0.04em;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="site-nav" aria-label="Site navigation">
+      <div class="site-nav-inner">
+        <a href="/index.html" class="site-logo">robharman.me</a>
+        <div class="nav-links">
+          <a href="/readme.html">readme</a>
+          <a
+            href="https://github.com/robharman"
+            target="_blank"
+            rel="noopener noreferrer"
+            >github</a
+          >
+          <a href="/rss.xml">rss</a>
+        </div>
+        <div class="nav-controls">
+          <span class="picker-label">Style:</span>
+          <div class="picker">
+            <button type="button" class="tab-btn" data-variant="terminal" title="terminal">
+              🖥️
+            </button>
+            <button type="button" class="tab-btn" data-variant="cards" title="card">
+              🃏
+            </button>
+            <button type="button" class="tab-btn" data-variant="newspaper" title="newspaper">
+              📰
+            </button>
+          </div>
+          <button type="button" class="dark-btn" id="dark-btn">&#9728;</button>
+        </div>
+      </div>
+    </nav>
+    <div class="post-wrap">
+      <a href="/index.html" class="post-back">&larr; home</a>
+      <div class="post-meta">
+        <time datetime="2020-10-08">2020 Oct 08</time>
+        <span class="sep">&middot;</span><span class="post-tag">Diving</span>
+      </div>
+      <h1 class="post-title">Raja Ampat and the Banda Sea</h1>
+      <div class="post-body">
+        <p>
+          Long before Coronavirus catapulted the world into chaos, the climate
+          catastrophe that threatens to destroy everything natural and beautiful
+          in the world made it increasingly important to me to see the wonders
+          beneath the sea before they're all gone. So I spent more money than I
+          should've, and took 43 hours of flights to get to Sorong, Indonesia
+          for a ten day liveaboard cruise with
+          <a href="https://www.wallacea-divecruise.com/"
+            >Wallacea Dive Cruises</a
+          >
+          aboard the
+          <a href="https://www.wallacea-divecruise.com/liveaboard/mv-ambai"
+            >MV Ambai</a
+          >
+          through Raja Ampat and the Banda Sea.
+        </p>
+        <hr />
+        <p>
+          Most of this was written as I went, so I’ll have to ask you to forgive
+          the inconsistent tenses because I’m not editing it again.
+        </p>
+        <p>
+          It's a far cry from diving aboard Blackbeard's, and while I appreciate
+          the luxury, I don't know that I love it as much as the stripped down,
+          bare bones service that I have got from Allstar Liveaboard's budget
+          service out of Nassau. The food is great, the crew as friendly as one
+          could hope for, and the accommodations are phenomenal. But I felt a
+          tad out of place among the mostly European travelers.
+        </p>
+        <p>
+          The first morning on the boat brought me to life with a sunrise
+          through the brass porthole beside my head, and the creaking sound of
+          wood twisting and flexing as the motor slowly brought us up to speed
+          to take us deep into the Dampier Straight. Aside from dive trips, and
+          Christmas as a child, I don't know of a time in my life that I’ve ever
+          eagerly jumped out of bed at 0630.
+        </p>
+        <p>
+          After the first dive I'd checked off the three things I was desperate
+          to see: octopus, Wobbegong, and a mantis shrimp. SD Card failures
+          notwithstanding, it was wildly successful to say the least. By the
+          second dive I've got my breathing back and have seen more sharks and
+          barracuda than most people see in their lifetime, the current was
+          strong and most of the dive was spent tethered to the reef and
+          patiently watching the ocean unfold before us. Swimming against the
+          tide was as futile as fighting it, or time, ever was. I gave up and
+          let myself go along for a slow drift.
+        </p>
+        <p>
+          The third dive was exactly what I travelled halfway across the planet
+          for. A shallow dive on a reef that yielded more photos and videos
+          worth talking about than my entire last trip did. Turtles, sharks,
+          tens of thousands of fish, and a cocky little clown fish that fronted
+          on me and my intrusive camera. An almost endless line of trumpet fish,
+          giant parrot fish, beautiful macro life and coral that beggared belief
+          in its vibrancy and diversity.
+        </p>
+        <p>
+          A quick stop at Bat Island, an island with several abandoned cabins.
+          Apparently, halfway through completion someone realized that the
+          market for travelers deep in the Indonesian ocean who were willing to
+          cohabitate with thousands of bats the size of Canada Geese was
+          probably limited to myself, and a handful of others. The island is now
+          a stopping point for cruises like mine, day travelers and locals. A
+          sign hastily, but securely, strung between two trees proclaimed it an
+          ecological site. The feral cats seemed friendly, but when you're a
+          day’s cruise from the nearest hospital, rabies sounds less fun than it
+          normally does. I did not pet them.
+        </p>
+        <p>
+          Closing the first day with a night dive was more of the same. More
+          things crossed off my list: cuttlefish, pigmy seahorses, tiny hermit
+          crabs and more shrimp with their iridescent orange eyes capturing the
+          light of the torch. Peppering the wall between 3 meter wide sea fans
+          of the most vibrant shades of purple and pink, were pine and lime
+          green soft and hard corals, bright red, purple and royal blue coral
+          tubes turned the entire wall of the island into a living history of a
+          planet untouched by mankind.
+          <a href="https://en.wikipedia.org/wiki/Parribacus_antarcticus"
+            >Sculptured slipper lobster</a
+          >
+          trundled along the near vertical surface in their prehistoric majesty.
+        </p>
+        <p>
+          As the only north American on the boat, some things require a mild
+          amount of mental gymnastics: converting millibars to PSI when at
+          depth, converting depth from meters to feet, so that I know which
+          camera is safe to use, and then back to meters so that things make
+          sense. It's also sheltered me from dealing with currents of any real
+          sort, aside from my beloved
+          <a
+            href="https://allstarliveaboards.com/the-washing-machine-dive-site/"
+            >Washing Machine</a
+          >
+          which is a drift more than a dive in a current. No lessons were
+          apparently learned by me from the second dive the day before and I
+          spent a significant amount of time struggling to stay properly
+          oriented on the first dive of day two. Dragged tumbling away from my
+          buddy and dive guide I partnered up with our Spanish cruise director
+          who took me on a fantastic exit to the dive, pointing out multiple
+          black and white tipped reef sharks,
+          <a href="https://www.fisheries.noaa.gov/science-blog/fish-shapes-reef"
+            >bumphead parrotfish</a
+          >, and a handful of other large fish.
+        </p>
+        <p>
+          The second dive of the day was unremarkable, relatively speaking. The
+          magnitude of life here is, in and of itself, remarkable relative to
+          anywhere else I've been. The most potent thing I saw was a sea fan
+          with 18 pigmy seahorses; our dive guide said he'd never seen more than
+          five or six on a single fan.
+        </p>
+        <p>
+          The third dive of the day brought us back to another shallow area with
+          a crumbling wooden jetty, half collapsed in disrepair, covered in
+          bright fuchsia soft coral. A newly implemented conservation area, with
+          incredible growth over the last year gave hope that maybe reefs can
+          survive if humans make an effort to ensure it. Massive spans of spiky
+          coral; a human sized giant clam; thousands of yellow-tailed fusiliers
+          content to let me swim among them; dozens of each of the types of
+          sweetlips native to the area sat guard atop spans of mushroom-like
+          flat topped hard corals. Turtles dozed in nooks between tall coral
+          blooms, starkly contrasting the blues and purples of the coral. A
+          medium-sized turtle took one look at me, decided I wasn't the kind of
+          person she wanted to associate with and ascended for air. Just around
+          the corner a meter and a half long turtle spun slowly on a front fin
+          before crashing down, sending shards of spiky coral drifting down on
+          the slow drift of the bay’s current.
+        </p>
+        <p>
+          After just over an hour underwater we boarded the speedboat to return
+          to the mothership and set off for the longest open water crossing of
+          the trip. Heading for the Banda Sea saw the sun set, casting long
+          shadows over the last protective islands we'd see until morning. The
+          sea greeted us with open arms, strong winds and moderate swells. The
+          wide, clear skies sparkled with a million stars as the waves broke
+          against the hull, spraying me gently with salty mist as my stomach
+          slowly rose and fell with the sea, and ship.
+        </p>
+        <p>
+          The open sea brings its own challenges, namely in the form of meter
+          tall swells, and constant course corrections. The skies clouded over
+          as the wind began to howl, threatening to send furniture and personal
+          belongings over the railing and into the black water. The gentle
+          misting became splashing water, and the slow rise and fall became
+          abrupt and thunderous crashing on the troughs between waves. Add to
+          this, the distinct smell of diesel below decks and my iron stomach
+          began having doubts. After dinner everyone headed to bed to sleep
+          through the worst of it. A fitful sleep punctuated with brief moments
+          of consciousness was rudely interrupted by several liters of seawater
+          crashing through the porthole opposite my head which I'd failed to
+          securely fasten. Combining the smell, the bouncing, the twisting and
+          rolling and dinner came back with a vengeance, and much less taste. I
+          slept the rest of the night in the galley.
+        </p>
+        <p>
+          The morning's first dive was the first of which I wish I'd brought a
+          wetsuit for. The water was chilling and threatened to sink into my
+          core. To say it was worth it is a gross understatement. The dive
+          started with a marble ray two meters across if it were an inch.
+          Swollen, Sky Blue and
+          <a href="https://reefguide.org/phyllidiacarlsonhoffi.html"
+            >Carlsonhoff's Phyllidia</a
+          >nudibranchs occasionally dotted the coral floor.
+          <a href="https://www.whatsthatfish.com/fish/barramundi-juvenile/157"
+            >Juvenile barramundi</a
+          >, a spotted eel, and
+          <a href="https://en.wikipedia.org/wiki/Mobula">Mobula manta</a> were
+          the stars of the show until we happened upon two octopi fighting over
+          a hidey-hole, and a third who seemed more interested in teasing me
+          with its eerie stare, pulsating cloaca and rapid colour changes than
+          in letting me see it. Blending into the background with near
+          supernatural precision gave way to slowly flashing colours drawing
+          tiny fish closer to it's grasp. Unfortunately for me, shyness on its
+          part and a desire to move on on the part of my dive buddy left me
+          watching naught but the top of its <em>head</em> peek out of the
+          shelter before flashing black, white and blue at me and disappearing
+          back down.
+        </p>
+        <p>
+          The second dive was down a wall, which after my trip to the Bahamas in
+          May, didn't leave me with a whole lot of hope. I was instead treated
+          to views akin to those in early diving footage before the seas had
+          been fished dry and destroyed. Massive walls of sparkling, shimmering,
+          dancing anchovies, slender fusiliers, and assorted other fish hiding
+          within them. Left and right they danced, as our dive guide, bee hat
+          and all, conducted them like a professional Concerto. A smash of his
+          hands sent them scattering briefly before coming back to the dance.
+          Cresting the wall brought us into a spiraling school of barracuda
+          shimmering in the sunbeams. We sat still on the ocean floor as they
+          slowly circled us, giant black marble eyes staring at us from the
+          front of their torpedo-like bodies. Human-sized Bumphead Parrot fish
+          lurked in the distance as black tipped reef sharks patrolled in the
+          cloudy edge of visibility. Finding Nemo proved easier than the film
+          would have you believe as every corner held anemones with a handful of
+          clown fish keeping things clean and free from debris.
+        </p>
+        <p>
+          Dive number three brought me up close and personal with several
+          jellies, another patch of clownfish, and a school of jacks so fearless
+          I wondered if they were going to hit me.
+        </p>
+        <p>
+          After the dive we journey to a lagoon in the middle of nowhere.
+          Despite all the magnificent beauty of the landscape seemingly
+          untouched by man I'm reminded of the legacy we'll leave behind. An
+          area visited solely by the local liveaboard industry, undeveloped, and
+          so far out of the way that not even locals –if you can call people
+          from a fishing village 20 kilometers away <em>locals— </em>come<em
+          > </em>to view it, is riddled with plastic garbage brushing up against
+          the giant stone cliffs and plastic bags caught on tree roots that dip
+          into the water clinging to 15 meter vertical cliffs, and chunks of
+          Styrofoam bobbing carefree in the nearly picture-perfect azure water.
+        </p>
+        <p>
+          The night dive on day three may have changed my mind about them. Most
+          of the dive was typical, small shrimp, little worms, and jellies.
+          Standing out was a beautiful banded coral shrimp, a tiiiiiny bobtail
+          squid, and a large bell jelly with tails half a meter long. But the
+          star of the show was the dinoflagellate lights show. Turning all our
+          lights off, the sea turned utter black, more so than anywhere I've
+          ever been on land. Brisk movements create fluorescent green sparks to
+          fly forth from the water around your hands and shining your light
+          quickly into the darkness spawns galaxies of brilliant blue light
+          exploding like a thousand neutron stars going nova. The world around
+          shines briefly, hanging in the darkness a brilliant trail of explosive
+          ink as the tiny shrimp-like creatures jet away from you. I was the
+          master of a universe spawning light in the darkness with my hands and
+          a beam of narrow bright light before dousing my torch and watching my
+          creation unfold. I thought initially I might be a bit
+          <a href="https://en.wikipedia.org/wiki/Nitrogen_narcosis">narc'y</a>,
+          but after the dive, safe on the boat, and now a year later on land, I
+          can say it was still the coolest thing I've ever seen on a night dive.
+        </p>
+        <p>
+          Day four was cloudy, the sun a slightly brighter patch in the sky,
+          bumpy seas and windy. We started with a trip to a cleaning station in
+          the worst visibility we've had yet. My octo started free flowing as I
+          dropped in and I lost two hundred PSI so I was more focused on my air
+          than I would've liked to have been the entire dive; not inherently a
+          bad thing, but a preoccupation. I picked up an old fishing reel and
+          about 30 meters of fishing line that was wrapped around coral and
+          threatening to slice a couple sea fans off at the root. As we crested
+          the reef everyone's heads snapped to the right and a few people let
+          out audible groans, muted as they are by twenty meters of water. A
+          giant oceanic manta slowly swooped down out of the murky water and
+          gently flew a few meters overhead, slowly and gracefully gliding over
+          us. A few long slow turns and it disappeared back into the distance.
+          We all stopped and watched as giant schools of anchovies swept back
+          and forth close to the reef sparkling in the diffused green glow from
+          the overcast sky. Slowly moving forward and another manta came into
+          view, the same silky movements as it turned in slow circles above the
+          reef. Dolphins chirped in the distance, safely out of view as a third
+          and even more massive manta came into view. The guides all told us it
+          was a big one, and their excited chatter once we were all back on the
+          boat gave rise to the impression that they weren't just talking it up
+          for our benefit. Four meters they say, and the scale of it mixed with
+          its grace is something that neither words nor video of the event can
+          truly convey to those that haven't seen one in the flesh. After
+          spending 40 minutes at depth, a chill set in, and I spent the
+          interlude between breakfast and the next dive in sweatpants trying to
+          warm up. Maybe, <em>just maybe</em>, I should've brought a shorty.
+        </p>
+        <p>
+          Back into the murk at Boo Windows, down a wall with another zillion
+          small fish; colourful sea slugs; and another large oceanic manta
+          hovered overhead, it's massive mouth open as it trundled forward
+          against the current. A brilliant white and multi-blue
+          <a href="https://en.wikipedia.org/wiki/Emperor_angelfish"
+            >juvenile Emperor Angelfish</a
+          >
+          skittered around, alternately displaying it's circled scales and
+          hiding behind anything it could. While full grown Emperor Angelfish
+          darted around chasing the various triggerfish just off the reef.
+           Further down the wall small crabs hid in sea fans, and a painted
+          spiny lobster did it's best to avoid its moment in the spotlight.
+          Coming nearer to the surface another turtle kept a wary eye on the
+          foreign paparazzi while we did our best to keep a respectful distance.
+          A
+          <a
+            href="https://www.jungledragon.com/specie/18615/depressed-spider-crab.html"
+            >Depressed Spider Crab</a
+          >
+          sulked on the edge of a sea fan lamenting the day I came to Indonesia.
+          <a href="https://www.liveaquaria.com/product/365/?pcatid=365"
+            >Yellowtail Coris</a
+          >, numerous kinds of parrotfish and brilliantly coloured Grouper
+          chased each other, and a near infinite variety of smaller fish as we
+          swam through unnoticed. A scorpionfish sat motionless as I approached,
+          its eyes twitching slightly as my camera panned over its spiny, reef
+          like body. Atop the ridge a black
+          <a
+            href="https://www.whatsthatfish.com/fish/saddleback-anemonefish/65#9"
+            >Saddleback Anemonefish</a
+          >
+          angrily tried to evict a tiny one-armed crab from the middle of their
+          anemone without success. As we neared the small swim throughs for
+          which the site was named, the current kicked up and refused us entry.
+          Moving along with the current hovering weightless above the reef with
+          the abyssal aquamarine water to our left we slowly surfaced and
+          returned to the Ambai for lunch.
+        </p>
+        <p>
+          En route to the third dive of the day the dolphins finally made an
+          appearance; poking their heads out of the water and dancing in front
+          of the boat. When we arrived at the site, the visibility was shit, but
+          the dive was great. More giant bait balls, more nudibranchs, more
+          schools of Spanish mackerel, longfin bannerfish, and the ever present
+          blue and yellow fusiliers that I swim through every chance I get.
+          Halfway through the dive, I assume, the dolphins came hunting and sent
+          all the aforementioned schools running to the hills. I was trapped in
+          a fish stampede as they all fled in the same direction, heedless of me
+          and my peers as they escaped whatever terror was behind them. I saw a
+          handful of juvenile midnight snappers clumsily banging around the
+          ocean floor, as graceful as pinballs, their long fins more an
+          obstruction than anything beneficial. For the third time in one day,
+          and one lifetime, a giant Manta graced me with its presence. More
+          macro life, and something akin to my Bahamian favourite, the
+          <a href="https://www.whatsthatfish.com/fish/scrawled-filefish/124"
+            >scrolled filefish</a
+          >.
+        </p>
+        <p>
+          Our second long crossing of the trip was next and since it was a 13
+          hour sail in ideal conditions the crew wanted to set off immediately
+          since the forecast was saying bigger wind, bigger waves, and all of it
+          pushing against us. Thankfully, the seas, and wind, were calmer than
+          forecasted, and far calmer than those of the first. I spent an hour
+          lost in thought watching flying fish jump through our wake as we
+          slowly moved on.
+        </p>
+        <p>
+          Despite dire predictions of arriving several hours late, we got to
+          Koon on time for our dive briefing, and 7:30 dive.  The first of the
+          day brought multiple eel sightings, a large spotted eel and two green
+          morays peering from their den. Neither of which had the courtesy to
+          give the camera a flash of their teeth. Beady little eyes and crooked
+          fangs their creepy, borderline evil, reputation is well earned, but
+          hardly deserved with how timid they are. Aside from it being my 100th
+          dive, and some beautiful views of coral, the only other remarkable
+          things I saw were a large sea snake slither swimming across the ocean
+          floor, and hundreds of meters of fishing line wrapped around, through,
+          and in some cases forming, coral. The cleaner parts I untwined and
+          brought back to the surface. The parts not completely covered, or
+          forming new parts of the reef we cut free  and brought them back to
+          the boat to hopefully not just end up back in the depths. Removing all
+          the forgotten fishing line from the site is an impossible task, there
+          it will live on long past when humans have finished destroying the
+          planet, to be uncovered, doubtlessly, by whatever comes after us.
+        </p>
+        <p>
+          The second and third dives were at the same spot and were both more of
+          the same for me. Others in the group saw a parade of twenty or so
+          hammerhead sharks swim by off the wall, at around 37 meters.
+          Unfortunately, that was a depth precluded by my NitrOx. Like many
+          other divers in the area, I came hoping for a sighting but left with
+          only other people's videos to prove that they actually do exist. A
+          midsized sea turtle sat under a branch of hard coral scratching her
+          back while a crowd of us sat watching, filming, and wondering how long
+          it could go on. I know turtles can hold their breath for hours, and
+          it's quite possible that her entire breath could've been spent
+          scratching her back at the same spot; we didn't stay long enough to
+          find out.
+        </p>
+        <p>
+          In lieu of a night dive, we were supposed to take a slow cruise down
+          an island inlet, but the tides were too low for the boat to make it
+          safely over the near-shore reef. Instead we took a different route to
+          shore and were met by a handful of machete-wielding locals. Our tour
+          guide negotiated with them in hastily spoken Indonesian and they took
+          us on a short hike through the island over a concrete path, the bush
+          strewn with plastic waste, empty cigarette packs and the requisite
+          discarded flip-flop. Midway through the hike were several shacks in
+          disrepair and a brand-new Mosque surrounded by a pristine lagoon. As
+          with most things here, the colours were so bright they looked colour
+          corrected. After a brief stop for a few pictures our machete wielding
+          guides beckoned us on, and we continued to our destination.
+        </p>
+        <p>
+          At the end of the path, another wooden shack, this one overlooking the
+          end of the inlet from atop a ten-meter cliff. With a smile, and a
+          machete in hand, one of them motioned us to go closer and indicated we
+          should jump. Some more hasty Indonesian between our guide and them let
+          us know that they all jump here; it's great fun, they say; trust us,
+          it’s safe; we promise it’s deep enough to dive headfirst into. Some
+          concern about how we would get back up was waved away and they pointed
+          to a ladder, which was <em>definitely</em>not up to code, but should
+          serve well enough. Half the group jumped in, myself included
+          (obviously), and the semi-fresh water enveloped me in warmth from the
+          days sun. A nice contrast to the cold-water diving that we'd been
+          doing all day. After each jumping in twice we headed back to the boat
+          and took a handful of selfies at the overlook, and near the first
+          lagoon.
+        </p>
+        <p>
+          Walking on land is weird after a few days at sea, but the excursion
+          was definitely the highlight of my day. The slow boat ride back to the
+          Ambai was bathed in another picturesque rapid Indonesian sunset before
+          the ship set sail for another open sea crossing, albeit a shorter one
+          than the last two.
+        </p>
+        <p>
+          An early morning dive at Karang Hatta sent us into the worst
+          visibility we had for the trip, in water only a degree warmer than the
+          day before. The mild current had me close to a wall, peeking into tiny
+          holes and looking for macro life. Aside from some bright yellow
+          <a
+            href="https://www.reeflex.net/tiere/6669_Stylocheilus_longicauda.htm"
+            >Long-Tailed Sea Hare</a
+          >, there wasn't anything incredibly unique about the dive until
+          halfway through, off in the distance, the unmistakable silhouette of
+          hammerhead sharks against the bright green murk that I'd come to
+          associate with the Banda Sea. Their calm, almost slithering, motion
+          letting them glide slowly out of view. The visibility was bad enough
+          to obscure their colouring, so it's unclear if they were
+          <a href="https://en.wikipedia.org/wiki/Scalloped_hammerhead"
+            >scalloped</a
+          >or
+          <a href="https://en.wikipedia.org/wiki/Great_hammerhead">great</a
+          >hammerheads, but they were at least two meters long by the dive
+          guide's reckoning. While still endemic to the site, the fishing line
+          here all seemed to be old, wrapped in hard coral growths at least a
+          couple years old. Long strands of pink and pale blue coral tubes had
+          begun to form on the tightrope between two other larger outcroppings.
+          Long strands of line coming down the wall had been wrapped tight
+          around rocks, and hard corals. The thick, plyable plastic had cut
+          through a tube or two which had then simply grown around it, entwining
+          it and enveloping the line that would surely outlive everything on the
+          reef.
+        </p>
+        <p>
+          We anchored just off the reef near Tanjung Butom and went through a
+          briefing before hastily. The second dive of the day was worse from a
+          visibility perspective, but nicer from a temperature perspective.
+          Several turtles lounged in the spiky coral gardens, but the thing we
+          all hoped for was more hammerheads. We spent the first twenty minutes
+          dropping down to 35ish meters and burned a third of a tank waiting for
+          them but were stood up. Seasonally, this kind of water is to be
+          expected in the Banda Sea as deep water upwells, bringing nutrient
+          rich colder water to the top. Speculation is, we’re told, that this is
+          why there are hammerheads moving through here. From my understanding,
+          it's pretty rare for sharks to travel in such large schools as well
+          but seeing twenty or more of them at a time isn't unheard of.
+          Ascending back to the top of the reef brought an expansive coral
+          garden out of the murky green water. Built upon a volcanic island, the
+          rocks were purple and green and teeming with life while the soft and
+          hard corals suffered no bleaching at all that I saw. Fish darted to
+          and fro beneath the cover of the coral, around large sponges, and
+          chased each other around and away from their territory. Some local
+          parrotfish variations I haven't seen before caught my eye, but the
+          visibility was too poor for my camera to grab anything I could use to
+          clearly differentiate them from the other varieties when I got back to
+          the boat.
+        </p>
+        <p>
+          Currents are fickle things, and when we arrived at our next
+          destination we had to change dive sites twice because they weren't
+          acting as predicted. Splitting awkwardly against an island meant that
+          both approaches to the first site wouldn't work well for diving. So
+          off to the spot that was supposed to be our night dive, another wall
+          with a volcanic shelf. Some large-ish tuna, a bunch of the same bright
+          yellow sea-hares from before, some Emperor fish, parrotfish,
+          angelfish, and baitfish. There was a picturesque swim through at 30
+          meters, about five meters long, that put us out at 25. Its walls were
+          lined with soft coral, sea fans, sponges, and filled with dozens of
+          smaller fish seeking refuge from the current.
+        </p>
+        <p>
+          The main attractions to the site were the flora, rather than the
+          fauna. The biggest sea sponges I've ever seen, beautiful massive sea
+          fans, and an expansive coral garden atop the volcanic rock. The water,
+          still green and murky meant that anything more than about three meters
+          made it hard to keep an eye on both my buddy, and my dive guide. We
+          got briefly separated a couple times during the dive, but when the
+          current kicked in as we came atop the shelf the brief separations
+          became longer. Our guide stopped as both he and I had lost track of my
+          buddy at the end of the line. We waited a moment, my buddy showed up,
+          I stopped to take a video, they kept going. I waited a moment,
+          couldn't see them, set off in the direction we'd all been going and
+          searched for them for a couple of minutes, then decided to call the
+          dive. I slowly ascended along the shelf until I got to 5 meters depth,
+          and held for a five minute safety stop, inflated my sausage and
+          ascended.
+        </p>
+        <p>
+          A minute or two later our dive guide popped his head up as I was
+          climbing aboard the speed boat to make sure I was ok. I signaled all
+          good and he went back down to finish the last ten minutes of the dive
+          with my buddy. Being lost and alone at depth is concerning, but when
+          there's sky overhead, and ample air in your tank, there's no reason to
+          get stressed or do anything other than stick to your training, calmly
+          follow procedure, and have a conversation about how to avoid getting
+          separated from each other on the next dive. We discussed what went
+          wrong on the way back to the main boat, and agreed on how we were
+          going to behave on the next dive.
+        </p>
+        <p>
+          Once the dive was done, we all got dressed, dried off and headed into
+          a small island town named
+          <a href="https://en.wikipedia.org/wiki/Banda_Neira">Banda Neira</a> at
+          the foot of a relatively recently active volcano. Old fishing
+          trawlers, catamarans and shallow pencil shaped fishing boats lined the
+          docks. The salty sea air was laden with the smell of fish and diesel
+          and a warm breeze flowed down the side of the mountain while the sun
+          crept lower in the sky, behind the perfect amount of cloud cover to
+          ensure another photoshopped sunset sky. A
+          <a href="https://en.wikipedia.org/wiki/Fort_Belgica">stone fort</a>
+          sat atop a hill behind a mosque, a reminder of when the island was
+          central to the spice trade in the 1600s. The area was central to
+          cinnamon, nutmeg, and anise, each of which was more valuable than gold
+          or diamonds.
+        </p>
+        <p>
+          Climbing the hill to the foot of the fort led to a breathtaking view,
+          another golden topped mosque shining in the setting sun. The bay
+          created by four islands in a circle reflected the cloudy sky, creeping
+          shadows spreading from the cloud covered peak of the volcano, while a
+          rooster endlessly crowed in the village below. The Indonesian jungle
+          shone bright in the setting sun, as a local nutmeg harvester took us
+          into the bushes to show us how it was done, then gave us a sliver of
+          cinnamon tree bark. Upon learning I was from Toronto he asked me to
+          come.out drinking with him, and told me he wanted to give me a
+          surprise. When I said we were leaving soon, he let me know that the
+          surprise was for Viagra and shook his head with disappointment when I
+          declined his offer. He opened the fort for us nonetheless. Climbing
+          rickety metal ladders, fastened to the two hundred year old stone by
+          bolts corroded by time and saltwater I came to an even better vantage
+          point atop one of the fort's five watch towers. Guests and crew alike
+          wandered the abandoned fortress and as the sun fully dipped behind the
+          cloud tipped volcano four different mosques began calling out evening
+          prayer. The arabic echoed off the walls and hills while my tour group
+          hooped and hollered dive jokes at each other from across the fortress
+          parapets.
+        </p>
+        <p>
+          Another surprisingly awesome night dive wrapped up the day. I set into
+          it with very low expectations. It was to be a muck dive just offshore
+          of the town we visited earlier. Given how covered in garbage the water
+          near the shore was, I expected it to be mostly sunken plastic, and a
+          few dull brown coastal fish. Instead, I was treated to a cornucopia of
+          bright and fascinating life. A bright orange
+          <a href="https://www.sealifebase.ca/summary/Choriaster-granulatus"
+            >granular sea star</a
+          >that looked like a stuffed animal, so large that I had to put my hand
+          near it to give the photo context. A couple bright
+          <a href="https://reefguide.org/gymnodorisinornata.html"
+            >Unadorned Gymnodoris</a
+          >, a blue boxer crab, a skittering little
+          <a href="https://www.whatsthatfish.com/fish/darklined-fire-worm/2180"
+            >darklined fire worm</a
+          >, a giant bright red crab I can't pinpoint, and other rather common
+          local stuff. Towards the end of the dive, things got really
+          interesting. A bright red dinosaur head poked out of the sand and at
+          first glance I thought it was a child's toy that I grew up playing
+          with. After a second look, I noticed it's jaw slowly moving, the head,
+          quite alive belonged to a
+          <a href="https://en.wikipedia.org/wiki/Reptilian_snake_eel"
+            >Reptilian Snake Eel,</a
+          >waiting for some hapless fish to become dinner. We saw a
+          <a href="https://www.youtube.com/watch?v=K_7ByiYbCYM">Bobbit Worm</a>
+          on the hunt, it snapped unsuccessfully at a passing fish and so we
+          waited patiently in about 10 meters on the mucky shore floor as more
+          little brown fish slowly ambled by it. Slowly, one came to rest just
+          outside of its reach, and as the water ebbed, it was gently pushed
+          closer and closer to the waiting maw. Once, twice, and then the third
+          time a flicker of movement and the fish was drawn down, a second chomp
+          and it was dragged under the mud. A trio of pink, mottled scorpionfish
+          sat motionless as we passed, completely ignoring the clouds of dirt
+          kicked up by our group. At the very end of the dive, two
+          small-cuttlefish hunted together as a pair. While I watched it's
+          colours slowly shifted as it hid in the rocks between two large black
+          Sea urchins with bright yellow and blue lines at the base of their
+          spine. I was momentarily distracted by a passing razor fish and when I
+          turned my attention back, my cuttlefish was gone.
+        </p>
+        <p>
+          After a fitful sleep filled with vivid dreams, we headed back to the
+          site we’d missed the day before. The water had warmed up a few degrees
+          and the visibility was markedly improved. We headed down the wall and
+          over a coral covered volcanic ridge at about 30 meters, seeing some
+          nice schools of angelfish, butterflyfish and bannerfish. Once we made
+          it across the ridge and started a slow ascent we came across the first
+          of a dozen different eels we'd see. The first, a midsized
+          <a href="https://www.whatsthatfish.com/fish/giant-moray/116"
+            >Giant Moray</a
+          >relaxed and only it's head and a bit of its body slipping out of the
+          hole in the volcanic rock. Next was the brilliantly lemon coloured
+          head of a
+          <a href="https://www.whatsthatfish.com/fish/fimbriated-moray/110"
+            >Fimbriated Moray</a
+          >, it's jaws remained closed as we passed. A
+          <a href="https://www.whatsthatfish.com/fish/yellowmargin-moray/117"
+            >Yellowmargin Moray</a
+          >
+          sat partway out of its hole, watching us curiously as we passed. When
+          my buddy's GoPro ventured near it began tracking the movement, maybe
+          drawn to its own reflection in the lens, or maybe I'm just
+          anthropomorphising. Halfway out of its hole we all snapped a selfie
+          with another Giant Moray as we made our way forward. Coming around a
+          corner we noticed massive
+          <a href="https://seaunseen.com/honeycomb-moray-eel/"
+            >Honeycomb Moray</a
+          >
+          lounging lazily, fully exposed to the sea on a lower nook of the wall.
+          It was either oblivious or apathetic to our passing. After swimming
+          through more schools of bannerfish and trevallies, we found more of
+          each of the eels, in various states of exposure. As we finished our
+          safety stop we noticed a large coral boomy which held two Honeycomb
+          morays and another large giant Moray. As I ascended yet another
+          spotted Moray poked its head up from the ground, slowly slithering out
+          as I surfaced. We returned to the boat for yet another fantastic meal
+          aboard the Ambai and set sail for deeper waters.
+        </p>
+        <p>
+          Another distant island brought another deep ridge with a decent
+          current. A rapid descent to the edge of my maximum depth and the
+          briefest of hammerhead sightings. Grunting and fists pushed to temples
+          and a quick outstretched hand cutting like a knife to the forehead
+          making everyone spin wildly around looking everywhere in the vicinity
+          of where the finger pointed. A solitary body slipping into the edge of
+          visibility left me knowing I saw a shark, with a long tail, but still
+          I'd yet to see one in clear view. Silhouetted and distant seems to be
+          their style. We sat tethered to the reef, which I'm not a huge
+          proponent of. Anchoring via a reef hook to lifeless volcanic rock is
+          one thing, I find it hard to truly care about the damage I'm doing to
+          a couple square centimeters of microbial life that will doubtlessly
+          fix itself before the next person dives the site. But anchoring to
+          hard coral, even when done carefully, flies in the face of the way I
+          try to dive. After swimming through a large school of
+          <a href="https://www.whatsthatfish.com/fish/blue-trevally/743"
+            >Blue Trevallies</a
+          >I happened upon a wonderful spiky shelled turtle and swam with it for
+          a bit before we both decided that lunch couldn't wait any longer and
+          parted ways. Her for some nearby soft coral, or something, and me for
+          the surface.
+        </p>
+        <p>
+          Broken O-rings and that old chestnut, my previously burst eardrum
+          marred the next dive for myself and one other diver. On a negative
+          entry, as soon as I dropped in I knew something was amiss. My left ear
+          started creaking, hissing and making all kind of noise that it
+          shouldn't make. Immediately I checked my depth saw I was at about 3
+          meters and called the dive. One push up got me a bit disoriented, so I
+          inflated my BCD and when I breached the surface flipped my mask to the
+          top of my head and signaled to the speedboat driver that I was not ok.
+          My buddy and guide surfaced, and I told them I was calling my dive due
+          to ear problems and that they should continue without me.
+        </p>
+        <p>
+          As I clambered onto the boat, equilibrium slightly off, I saw two more
+          divers surface: one guide, one guest. The guest's O-ring had burst at
+          about 10 meters and his entire tank had vented as he did a rapid, but
+          controlled, ascent. Discussing it later, after he'd calmed down a bit,
+          he said that on his last pull from his regulator he'd been met with
+          the terrifying vacuum that all divers experience during training. As
+          he got to depth, he heard a pop, followed by the rapid hiss and
+          bubbling of free flowing air. He'd had time to check his octo, see
+          that wasn't the issue, look at the other divers to see them all
+          looking back at him, and then someone else had shoved their Octo into
+          his face and motioned for him to go up.
+        </p>
+        <p>
+          Luckily they were at a shallow enough depth, at the start of the dive,
+          that a rapid ascent wouldn't be injurious. Just to be clear to all
+          readers, if your O-ring pops, you will vent a completely full tank
+          (220 bar/3200 PSI) in under a minute: get someone else's Octo in your
+          mouth and do a controlled emergency ascent immediately. He was unable
+          to breathe at the end of his ascent from ten meters, under a minute
+          into a dive. If he'd been deeper, or longer into the dive it would've
+          been much worse.
+        </p>
+        <p>
+          Adding insult to injury, a school of twenty or more hammerheads was
+          spotted at the end of the dive at about 10 meters, and everyone had a
+          perfect view of them. Oh well, live to dive another day.
+        </p>
+        <p>
+          At the end of the trip, it was hard not to be bummed, stuck on the
+          boat for the last two days of diving. It was made easier when the
+          alternative is having a worse experience flying home, or so totally
+          blowing up my ear that it never heals properly and I can't ever dive
+          again. Thankfully all of the first day's dives were relatively boring.
+          Nothing special was seen on any of them, aside from mediocre
+          visibility and beautiful coral gardens. Sitting on the boat for the
+          day it became very clear that something was very wrong with my ear.
+        </p>
+        <p>
+          I turned to DAN's very helpful website and took the printed advice to
+          abstain from diving for the rest of the trip, but unfortunately
+          there's nothing to be done about the flying. The fluid draining from
+          my ear has gone from pink to clear, which is a good sign, but fills me
+          with dread about the flights that will get me to Sydney, and
+          eventually home.
+        </p>
+        <p>
+          We headed into a small village before the rest of the boat went for
+          their night dive, and like everywhere else I've been on land since we
+          first set sail, the amount of plastic garbage coating the landscape
+          was horrific. All through the bay were floating pieces of bottles,
+          plastic bags, Styrofoam, and random assortments of garbage. I read an
+          article recently about the Anthropocene, which essentially stated that
+          even if every human on the planet disappeared tomorrow, a civilization
+          in a million years would be able to detect us.
+        </p>
+        <p>
+          A thin geological layer filled with synthetic hydrocarbons, radiation
+          and fossil records complete with traces of our disposable lifestyle.
+          For all we know this planet is one of a kind with enough resources to
+          build and sustain our civilization for another few hundred eons, but
+          instead we've decided, collectively, to allow our basest needs define
+          the planet's history until the sun devours us all.
+        </p>
+        <p>
+          As the sun set on the Ambon harbour on my last day in Indonesia, the
+          bay looked free from garbage, Arabic songs rang out from every
+          direction. Even though my last two days have been dive-free, I'm
+          nothing but happy about this trip. It has been a profound experience
+          as a diver and as a person experiencing the best and worst of what our
+          planet has to offer.
+        </p>
+      </div>
+      <button type="button" id="share-btn" class="share-btn">copy link</button>
+      <nav class="post-nav" aria-label="Post navigation">
+        <a
+          href="initial-impressions-of-fortisiem-6-1.html"
+          class="post-nav-link"
+          >&larr; Initial Impressions of FortiSIEM 6.1</a
+        ><a
+          href="nginx-502-bad-gateway-after-php-version-upgrade.html"
+          class="post-nav-link"
+          >Nginx 502 Bad Gateway after PHP version upgrade. &rarr;</a
+        >
+      </nav>
+      <footer class="post-footer">
+        <span>robharman.me &copy; 2026</span>
+        <a href="/index.html">&larr; home</a>
+      </footer>
+      <p class="site-build">{{COMMIT_HASH}}</p>
+    </div>
+    <script src="/site.js"></script>
+  </body>
+</html>

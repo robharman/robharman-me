@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>robharman.me</title>
+    <link>https://robharman.me</link>
+    <description>Posts by Rob Harman — IT infrastructure, networking, and occasional adventures.</description>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 08 May 2026 00:40:53 GMT</lastBuildDate>
+    <atom:link href="https://robharman.me/rss.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>On-Prem Azure Pipelines Pester Tests Fail with ##[error]Unhandled: spawn pwsh ENOENT</title>
+    <link>https://robharman.me/posts/on-prem-azure-pipelines-build-pester-tests-fail-with-error-unhandled-spawn-pwsh-enoent.html</link>
+    <guid isPermaLink="true">https://robharman.me/posts/on-prem-azure-pipelines-build-pester-tests-fail-with-error-unhandled-spawn-pwsh-enoent.html</guid>
+    <pubDate>Fri, 18 Mar 2022 00:00:00 GMT</pubDate>
+    <description>I've been playing around with Azure DevOps Pipelines in my quest to become a better programmer. After spinning up an on-prem agent running on Server 2019, I kep</description>
+
+  </item>
+  <item>
+    <title>The constantly moving goalposts of Azure Automation's DSC Validation</title>
+    <link>https://robharman.me/posts/the-constantly-moving-goalposts-of-azure-automations-dsc-validation.html</link>
+    <guid isPermaLink="true">https://robharman.me/posts/the-constantly-moving-goalposts-of-azure-automations-dsc-validation.html</guid>
+    <pubDate>Mon, 15 Nov 2021 00:00:00 GMT</pubDate>
+    <description>For the better part of the 2020 I've been using a defaults resource within my DSC modules as outlined in THIS post. This suddenly stopped working, failing with </description>
+
+  </item>
+  <item>
+    <title>Azure Automation Hybrid Runbook Worker Login Failure: ClientCertificateCredential 'keyset does not exist'</title>
+    <link>https://robharman.me/posts/certificate-replacement-on-non-system-azure-automation-runbook-workers.html</link>
+    <guid isPermaLink="true">https://robharman.me/posts/certificate-replacement-on-non-system-azure-automation-runbook-workers.html</guid>
+    <pubDate>Sun, 10 Oct 2021 00:00:00 GMT</pubDate>
+    <description>If you're running a non-SYSTEM Hybrid Runbook worker and you replace your RunAs certificate, you may encounter a login failure with ClientCertificateCredential </description>
+
+  </item>
+  <item>
+    <title>FortiGate 7.0.x With Bell Residential Fibre</title>
+    <link>https://robharman.me/posts/fortigate-7-0-x-with-bell-residential-fibre.html</link>
+    <guid isPermaLink="true">https://robharman.me/posts/fortigate-7-0-x-with-bell-residential-fibre.html</guid>
+    <pubDate>Tue, 04 May 2021 00:00:00 GMT</pubDate>
+    <description>I've been using Sophos' UTM since forever, but at work we're moving away from our legacy Cisco ASAs, and to FortiGate. So I'm making the switch at home with an </description>
+
+  </item>
+  <item>
+    <title>FortiGate 7.0.x certificate request with multiple DNS names</title>
+    <link>https://robharman.me/posts/fortigate-certificate-request-with-multiple-dns-names.html</link>
+    <guid isPermaLink="true">https://robharman.me/posts/fortigate-certificate-request-with-multiple-dns-names.html</guid>
+    <pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate>
+    <description>The lack of clarity in FortiGate's error messages and documentation continues to irk me. The syntax required for it to include multiple DNS names in the certifi</description>
+
+  </item>
+  <item>
+    <title>Installing FortiGate 7.0.x on Hyper-V 2019</title>
+    <link>https://robharman.me/posts/installing-fortigate-on-hyper-v-2019.html</link>
+    <guid isPermaLink="true">https://robharman.me/posts/installing-fortigate-on-hyper-v-2019.html</guid>
+    <pubDate>Sat, 01 May 2021 00:00:00 GMT</pubDate>
+    <description>Fortinet's documentation is pretty terrible. This is especially true for their Hyper-V deployment instructions which leave out multiple steps, and left me frustrated trying to piece together instructions from multiple articles.</description>
+    <category>Fortinet</category>
+    <category>PowerShell</category>
+  </item>
+  <item>
+    <title>Recusrive DSC Composite Modules</title>
+    <link>https://robharman.me/posts/recusrive-dsc-composite-modules.html</link>
+    <guid isPermaLink="true">https://robharman.me/posts/recusrive-dsc-composite-modules.html</guid>
+    <pubDate>Thu, 18 Mar 2021 00:00:00 GMT</pubDate>
+    <description>I've been learning a lot about how to use Azure Automation to manage DevOps deployments of our Windows Servers. This has led me to a dozen DSC modules, some wit</description>
+
+  </item>
+  <item>
+    <title>Initial Impressions of FortiSIEM 6.1</title>
+    <link>https://robharman.me/posts/initial-impressions-of-fortisiem-6-1.html</link>
+    <guid isPermaLink="true">https://robharman.me/posts/initial-impressions-of-fortisiem-6-1.html</guid>
+    <pubDate>Thu, 11 Feb 2021 00:00:00 GMT</pubDate>
+    <description>We're finally at the point where our infrastructure is cleaned up enough that getting usable signal through all the logspew is finally possible. After comparing</description>
+
+  </item>
+  <item>
+    <title>Raja Ampat and the Banda Sea</title>
+    <link>https://robharman.me/posts/raja-ampat-and-the-banda-sea.html</link>
+    <guid isPermaLink="true">https://robharman.me/posts/raja-ampat-and-the-banda-sea.html</guid>
+    <pubDate>Thu, 08 Oct 2020 00:00:00 GMT</pubDate>
+    <description>In September, 2019 I spent 10 days aboard the MV Ambai, traveling through Raja Ampat and the Banda sea. It was incredible to behold the breadth of wildlife, and the sprawl of plastic waste.</description>
+    <category>Diving</category>
+  </item>
+  <item>
+    <title>Nginx 502 Bad Gateway after PHP version upgrade.</title>
+    <link>https://robharman.me/posts/nginx-502-bad-gateway-after-php-version-upgrade.html</link>
+    <guid isPermaLink="true">https://robharman.me/posts/nginx-502-bad-gateway-after-php-version-upgrade.html</guid>
+    <pubDate>Wed, 20 Dec 2017 00:00:00 GMT</pubDate>
+    <description>After installing a PHP version upgrade, my WordPress site wouldn't load. Instead users were greeted with a 502 Bad Gateway error.</description>
+    <category>Linux</category>
+  </item>
+  <item>
+    <title>Set Microsoft Office fonts and templates via GPO</title>
+    <link>https://robharman.me/posts/set-fonts-and-templates-in-ms-office-via-gpo.html</link>
+    <guid isPermaLink="true">https://robharman.me/posts/set-fonts-and-templates-in-ms-office-via-gpo.html</guid>
+    <pubDate>Wed, 19 Dec 2012 00:00:00 GMT</pubDate>
+    <description>Note that this process was originally written for Office 2010, but works with minor modifications for up to Office 2016, and Office 365. You must update the Off</description>
+    <category>Windows</category>
+    <category>GPO</category>
+  </item>
+  <item>
+    <title>Confusion with NTFS Permissions</title>
+    <link>https://robharman.me/posts/confusion-with-ntfs-permissions.html</link>
+    <guid isPermaLink="true">https://robharman.me/posts/confusion-with-ntfs-permissions.html</guid>
+    <pubDate>Sun, 01 Apr 2012 00:00:00 GMT</pubDate>
+    <description>Another tutorial on how NTFS permissions work.</description>
+    <category>Windows</category>
+  </item>
+  <item>
+    <title>Working around long file and folder names with ICACLS and TAKEOWN</title>
+    <link>https://robharman.me/posts/max_path_icacls_takeown.html</link>
+    <guid isPermaLink="true">https://robharman.me/posts/max_path_icacls_takeown.html</guid>
+    <pubDate>Sun, 11 Sep 2011 00:00:00 GMT</pubDate>
+    <description>Working around MAX_PATH limitations with ICACLS and TAKEOWN in PowerShell</description>
+    <category>Windows</category>
+  </item>
+  </channel>
+</rss>

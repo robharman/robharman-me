@@ -1,0 +1,1034 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>README — robharman.me</title>
+    <link rel="canonical" href="https://robharman.me/readme/" />
+    <meta
+      name="description"
+      content="About Rob Harman — IT infrastructure engineer writing about networking, Windows, PowerShell, and occasional adventures." />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230e0f11'/><text x='16' y='23' font-family='monospace' font-size='17' font-weight='bold' fill='%23e8e4de' text-anchor='middle'>rh</text></svg>"
+      type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="README — robharman.me" />
+    <meta
+      property="og:description"
+      content="About Rob Harman — IT infrastructure engineer writing about networking, Windows, PowerShell, and occasional adventures." />
+    <meta property="og:url" content="https://robharman.me/readme/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet" />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        font-size: 16px;
+      }
+      body {
+        min-height: 100vh;
+        transition:
+          background 0.2s,
+          color 0.2s;
+      }
+
+      :root {
+        --bg: #0e0f11;
+        --bg-sub: #161719;
+        --border: #2a2b2e;
+        --fg: #e8e4de;
+        --fg-muted: #6b6a67;
+        --fg-dim: #3e3d3b;
+        --accent: oklch(70% 0.12 195);
+        --accent-bg: oklch(25% 0.06 195);
+        --mono: "JetBrains Mono", monospace;
+        --sans: "DM Sans", sans-serif;
+        --card-bg: #161719;
+        --card-hover: #1c1d20;
+      }
+      body.light {
+        --bg: #f5f2ee;
+        --bg-sub: #edeae5;
+        --border: #d8d3cc;
+        --fg: #18181a;
+        --fg-muted: #888480;
+        --fg-dim: #ccc8c2;
+        --accent: oklch(38% 0.12 195);
+        --accent-bg: oklch(92% 0.04 195);
+        --card-bg: #ffffff;
+        --card-hover: #faf8f5;
+      }
+      body {
+        background: var(--bg);
+        color: var(--fg);
+      }
+
+      /* ── NAV ── */
+      .site-nav {
+        border-bottom: 1px solid var(--border);
+      }
+      .site-nav-inner {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 18px 24px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .site-logo {
+        font-family: var(--mono);
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--fg);
+        text-decoration: none;
+      }
+      .nav-links {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+      .nav-links a {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--fg-muted);
+        text-decoration: none;
+        letter-spacing: 0.04em;
+        transition: color 0.15s;
+      }
+      .nav-links a.active,
+      .nav-links a:hover {
+        color: var(--fg);
+      }
+      .nav-controls {
+        margin-left: auto;
+        display: flex;
+        gap: 6px;
+        align-items: center;
+      }
+      .picker {
+        display: flex;
+        border: 1px solid var(--border);
+        overflow: hidden;
+      }
+      .picker button {
+        font-size: 14px;
+        padding: 2px 7px;
+        cursor: pointer;
+        background: transparent;
+        color: var(--fg-muted);
+        border: none;
+        border-right: 1px solid var(--border);
+        transition:
+          background 0.15s,
+          color 0.15s;
+      }
+      .picker button:last-child {
+        border-right: none;
+      }
+      .picker button.active {
+        background: var(--fg);
+        color: var(--bg);
+      }
+      .picker-label {
+        font-family: var(--mono);
+        font-size: 10px;
+        color: var(--fg-muted);
+        letter-spacing: 0.04em;
+      }
+      .dark-btn {
+        font-family: var(--mono);
+        font-size: 10px;
+        padding: 3px 9px;
+        cursor: pointer;
+        background: transparent;
+        border: 1px solid var(--border);
+        color: var(--fg-muted);
+        transition: color 0.15s;
+      }
+
+      /* ── LAYOUT ── */
+      .wrap {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 48px 24px 80px;
+      }
+
+      /* ── HERO ── */
+      .hero {
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 32px;
+        margin-bottom: 40px;
+      }
+      .hero-label {
+        font-family: var(--mono);
+        font-size: 10px;
+        color: var(--accent);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+      .hero-title {
+        font-family: var(--sans);
+        font-size: 28px;
+        font-weight: 300;
+        letter-spacing: -0.4px;
+        color: var(--fg);
+        margin-bottom: 14px;
+      }
+      .hero-bio {
+        font-family: var(--sans);
+        font-size: 15px;
+        line-height: 1.75;
+        color: var(--fg-muted);
+      }
+
+      /* ── SECTION HEADS ── */
+      .section-head {
+        font-family: var(--mono);
+        font-size: 10px;
+        color: var(--fg-muted);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin: 40px 0 16px;
+      }
+
+      /* ── SKILL/PROFILE LISTS ── */
+      .bullet-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+      .bullet-item {
+        display: grid;
+        grid-template-columns: 14px 1fr;
+        gap: 10px;
+        align-items: start;
+      }
+      .bullet-marker {
+        color: var(--accent);
+        font-family: var(--mono);
+        font-size: 11px;
+        padding-top: 3px;
+      }
+      .bullet-text {
+        font-family: var(--sans);
+        font-size: 14px;
+        line-height: 1.65;
+        color: var(--fg-muted);
+      }
+
+      /* ── TWO-COL SKILLS ── */
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 48px;
+        margin-bottom: 0;
+      }
+      @media (max-width: 560px) {
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ── JOB ENTRIES ── */
+      .job {
+        border-bottom: 1px solid var(--border);
+      }
+      .job-header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 16px;
+        align-items: start;
+        padding: 18px 0;
+        cursor: pointer;
+        user-select: none;
+      }
+      .job-name {
+        font-family: var(--sans);
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--fg);
+        margin-bottom: 3px;
+      }
+      .job-title {
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--accent);
+        letter-spacing: 0.03em;
+      }
+      .job-meta {
+        text-align: right;
+      }
+      .job-period {
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--fg-muted);
+        display: block;
+        margin-bottom: 4px;
+        white-space: nowrap;
+      }
+      .job-loc {
+        font-family: var(--mono);
+        font-size: 10px;
+        color: var(--fg-dim);
+        display: block;
+      }
+      .job-toggle {
+        font-family: var(--mono);
+        font-size: 10px;
+        color: var(--fg-dim);
+        margin-top: 4px;
+        display: block;
+      }
+      .job-body {
+        padding-bottom: 24px;
+        display: none;
+      }
+      .job-body.open {
+        display: block;
+      }
+      .job-desc {
+        font-family: var(--sans);
+        font-size: 14px;
+        line-height: 1.75;
+        color: var(--fg-muted);
+        margin-bottom: 16px;
+      }
+      .job-ac {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      /* ── FOOTER ── */
+      .readme-footer {
+        margin-top: 56px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--fg-dim);
+        display: flex;
+        justify-content: space-between;
+      }
+      .readme-footer a {
+        color: var(--fg-dim);
+        text-decoration: none;
+      }
+      .readme-footer a:hover {
+        color: var(--fg-muted);
+      }
+      .site-build {
+        margin-top: 6px;
+        font-family: var(--mono);
+        font-size: 10px;
+        color: var(--fg-dim);
+        letter-spacing: 0.04em;
+      }
+      .post-back {
+        display: inline-block;
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.04em;
+        color: var(--fg-muted);
+        text-decoration: none;
+        margin-bottom: 32px;
+        transition: color 0.15s;
+      }
+      .post-back:hover {
+        color: var(--fg);
+      }
+      /* ── Variant-aware typography ── */
+      body.view-terminal .hero-title,
+      body.view-terminal .bullet-text,
+      body.view-terminal .job-desc,
+      body.view-terminal .job-name,
+      body.view-terminal .section-head {
+        font-family: var(--mono);
+      }
+      body.view-terminal .hero-title {
+        font-size: 19px;
+        font-weight: 500;
+        letter-spacing: 0;
+      }
+      body.view-terminal .hero-bio {
+        font-family: var(--mono);
+        font-size: 13px;
+        line-height: 1.7;
+      }
+      body.view-terminal .bullet-text {
+        font-size: 13px;
+      }
+
+      /* ── Cards mode ── */
+      body.view-cards .two-col {
+        display: block;
+      }
+      body.view-cards .bullet-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+      body.view-cards .bullet-item {
+        display: block;
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        padding: 12px 14px;
+        transition: background 0.15s;
+      }
+      body.view-cards .bullet-item:hover {
+        background: var(--card-hover);
+      }
+      body.view-cards .bullet-marker {
+        display: none;
+      }
+      body.view-cards .bullet-text {
+        font-size: 13px;
+        line-height: 1.55;
+      }
+
+      /* Professional Profile + Systems Skills: revert to plain bullets in card mode */
+      body.view-cards .two-col--plain {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 48px;
+      }
+      @media (max-width: 560px) {
+        body.view-cards .two-col--plain {
+          grid-template-columns: 1fr;
+        }
+      }
+      body.view-cards .two-col--plain .bullet-list {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 0;
+      }
+      body.view-cards .two-col--plain .bullet-item {
+        display: flex;
+        background: transparent;
+        border: none;
+        padding: 0;
+        transition: none;
+      }
+      body.view-cards .two-col--plain .bullet-item:hover {
+        background: transparent;
+      }
+      body.view-cards .two-col--plain .bullet-marker {
+        display: inline;
+      }
+      body.view-cards .job {
+        border: 1px solid var(--border);
+        margin-bottom: 10px;
+      }
+      /* override the base border-bottom-only rule */
+      body.view-cards .job + .job {
+        border-top: 1px solid var(--border);
+      }
+      body.view-cards .job-header {
+        padding: 14px;
+      }
+      body.view-cards .job-body {
+        padding: 0 14px 14px;
+      }
+      body.view-cards .post-back {
+        border: 1px solid var(--border);
+        padding: 4px 12px;
+        background: var(--card-bg);
+        transition:
+          background 0.15s,
+          color 0.15s;
+      }
+      body.view-cards .post-back:hover {
+        background: var(--card-hover);
+        color: var(--fg);
+      }
+      body.view-cards .readme-footer a {
+        border: 1px solid var(--border);
+        padding: 4px 12px;
+        background: var(--card-bg);
+        transition:
+          background 0.15s,
+          color 0.15s;
+      }
+      body.view-cards .readme-footer a:hover {
+        background: var(--card-hover);
+        color: var(--fg-muted);
+      }
+
+      /* ── Newspaper mode ── */
+      body.view-newspaper .hero-title {
+        font-family: var(--sans);
+        font-size: 36px;
+        font-weight: 400;
+        letter-spacing: -0.5px;
+        line-height: 1.15;
+      }
+      body.view-newspaper .hero-bio {
+        font-size: 16px;
+        line-height: 1.85;
+      }
+      body.view-newspaper .job-name {
+        font-family: var(--sans);
+        font-size: 17px;
+        font-weight: 400;
+      }
+      body.view-newspaper .job-desc {
+        font-size: 15px;
+        line-height: 1.85;
+      }
+      .site-build {
+        max-width: 900px;
+        margin: 4px auto 0;
+        padding: 0 24px;
+        font-family: var(--mono);
+        font-size: 10px;
+        color: var(--fg-dim);
+        letter-spacing: 0.04em;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="site-nav" aria-label="Site navigation">
+      <div class="site-nav-inner">
+        <a href="/index.html" class="site-logo">robharman.me</a>
+        <div class="nav-links">
+          <a href="/readme.html" class="active">readme</a>
+          <a
+            href="https://github.com/robharman"
+            target="_blank"
+            rel="noopener noreferrer"
+            >github</a
+          >
+          <a href="/rss.xml">rss</a>
+        </div>
+        <div class="nav-controls">
+          <span class="picker-label">Style:</span>
+          <div class="picker">
+            <button type="button" class="tab-btn" data-variant="terminal" title="terminal">🖥️</button>
+            <button type="button" class="tab-btn" data-variant="cards" title="card">🃏</button>
+            <button type="button" class="tab-btn" data-variant="newspaper" title="newspaper">📰</button>
+          </div>
+          <button type="button" class="dark-btn" id="dark-btn">&#9728;</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="wrap">
+      <a href="/index.html" class="post-back">&larr; home</a>
+      <div class="hero">
+        <div class="hero-label">README</div>
+        <h1 class="hero-title">Rob Harman</h1>
+        <p class="hero-bio">
+          Technical manager with over 15 years of results-driven infrastructure
+          design and solutions implementation. Top priority: secure systems
+          built to scale. I fix root causes, not symptoms. I thrive in
+          collaborative, open environments with a passion for computers,
+          networking, and cybersecurity.
+        </p>
+      </div>
+
+      <div class="section-head">Professional Profile</div>
+      <div class="two-col two-col--plain">
+        <div class="bullet-list">
+          <div class="bullet-item">
+            <span class="bullet-marker">›</span
+            ><span class="bullet-text"
+              >Windows Server 2003–2022, Azure, Hyper-V, Linux and UNIX systems
+              administration, automation and maintenance.</span
+            >
+          </div>
+          <div class="bullet-item">
+            <span class="bullet-marker">›</span
+            ><span class="bullet-text"
+              >Process automation using PowerShell and automated policy-based
+              systems management.</span
+            >
+          </div>
+          <div class="bullet-item">
+            <span class="bullet-marker">›</span
+            ><span class="bullet-text"
+              >Excellent understanding of DevOps and DevSecOps methodologies in
+              holistic infrastructure design.</span
+            >
+          </div>
+          <div class="bullet-item">
+            <span class="bullet-marker">›</span
+            ><span class="bullet-text"
+              >Network-based security, threat management,
+              penetration/vulnerability testing.</span
+            >
+          </div>
+        </div>
+        <div class="bullet-list">
+          <div class="bullet-item">
+            <span class="bullet-marker">›</span
+            ><span class="bullet-text"
+              >Troubleshooting and issue resolution with a focus on permanent
+              root-cause analysis.</span
+            >
+          </div>
+          <div class="bullet-item">
+            <span class="bullet-marker">›</span
+            ><span class="bullet-text"
+              >Scalable, resilient systems planning with redundancy and viable
+              backup solutions.</span
+            >
+          </div>
+          <div class="bullet-item">
+            <span class="bullet-marker">›</span
+            ><span class="bullet-text"
+              >Values teaching, mentoring and improving the overall knowledge of
+              the organization.</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="section-head">Systems Skills</div>
+      <div class="two-col two-col--plain">
+        <div class="bullet-list">
+          <div class="bullet-item">
+            <span class="bullet-marker">›</span
+            ><span class="bullet-text"
+              >Azure management, deployment and architecture (ARM, PowerShell,
+              Azure-CLI)</span
+            >
+          </div>
+          <div class="bullet-item">
+            <span class="bullet-marker">›</span
+            ><span class="bullet-text"
+              >Infrastructure as Code, automated deployments, dynamic
+              infrastructure</span
+            >
+          </div>
+          <div class="bullet-item">
+            <span class="bullet-marker">›</span
+            ><span class="bullet-text"
+              >On-prem to Azure migrations: VMs, SQL Server, automation
+              workloads</span
+            >
+          </div>
+          <div class="bullet-item">
+            <span class="bullet-marker">›</span
+            ><span class="bullet-text"
+              >PowerShell scripting, systems and process automation</span
+            >
+          </div>
+          <div class="bullet-item">
+            <span class="bullet-marker">›</span
+            ><span class="bullet-text"
+              >Windows Server 2000–2022; Desktop Experience and Core</span
+            >
+          </div>
+        </div>
+        <div class="bullet-list">
+          <div class="bullet-item">
+            <span class="bullet-marker">›</span
+            ><span class="bullet-text"
+              >Linux server administration (Debian, Ubuntu)</span
+            >
+          </div>
+          <div class="bullet-item">
+            <span class="bullet-marker">›</span
+            ><span class="bullet-text"
+              >Nginx in webserver and reverse-proxy configurations</span
+            >
+          </div>
+          <div class="bullet-item">
+            <span class="bullet-marker">›</span
+            ><span class="bullet-text"
+              >Exchange Online in hybrid configurations and on-prem
+              2003–2016</span
+            >
+          </div>
+          <div class="bullet-item">
+            <span class="bullet-marker">›</span
+            ><span class="bullet-text"
+              >Server virtualization: Microsoft Hyper-V 2008–2022</span
+            >
+          </div>
+          <div class="bullet-item">
+            <span class="bullet-marker">›</span
+            ><span class="bullet-text">ZFS administration</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-head">Experience</div>
+
+      <div class="job" id="job-google">
+        <div class="job-header" onclick="toggleJob('google')">
+          <div>
+            <div class="job-name">Google Cloud</div>
+            <div class="job-title">Cloud Solutions Developer Manager</div>
+          </div>
+          <div class="job-meta">
+            <span class="job-period">April 2022 – Current</span>
+            <span class="job-loc">Kitchener, ON</span>
+            <span class="job-toggle" id="toggle-google">[ expand ]</span>
+          </div>
+        </div>
+        <div class="job-body" id="body-google">
+          <p class="job-desc">
+            Cloud Solutions Developer Manager at Google Cloud.
+          </p>
+        </div>
+      </div>
+
+      <div class="job" id="job-plan">
+        <div class="job-header" onclick="toggleJob('plan')">
+          <div>
+            <div class="job-name">Plan International Canada</div>
+            <div class="job-title">
+              Senior Manager IT Infrastructure and Security
+            </div>
+          </div>
+          <div class="job-meta">
+            <span class="job-period">May 2018 – April 2022</span>
+            <span class="job-loc">Toronto, ON</span>
+            <span class="job-toggle" id="toggle-plan">[ expand ]</span>
+          </div>
+        </div>
+        <div class="job-body" id="body-plan">
+          <p class="job-desc">
+            Plan International Canada is the Canadian arm of Plan International,
+            a global non-profit focused on improving the lives of children in
+            developing areas. I was the sole technical contact responsible for
+            providing guidance to all internal projects with an IT component,
+            building and designing Plan's cloud-based infrastructure, and
+            implementing security enhancements while modernizing legacy systems.
+          </p>
+          <div class="job-ac">
+            <div class="bullet-item">
+              <span class="bullet-marker">›</span
+              ><span class="bullet-text"
+                >Introduced and developed automated DevOps processes for
+                deploying all Windows and Linux infrastructure.</span
+              >
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-marker">›</span
+              ><span class="bullet-text"
+                >Designed and built fully automated role-based secure server
+                templates using GitHub, Azure Automation, DSC, PowerShell.</span
+              >
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-marker">›</span
+              ><span class="bullet-text"
+                >Cleared a decade's worth of tech-debt through modular
+                infrastructure replacement with cloud-first practices.</span
+              >
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-marker">›</span
+              ><span class="bullet-text"
+                >Implemented automated vulnerability detection and alerting
+                using Rapid7's InsightVM.</span
+              >
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-marker">›</span
+              ><span class="bullet-text"
+                >Implemented MFA, conditional access policies, Just In Time
+                access control.</span
+              >
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-marker">›</span
+              ><span class="bullet-text"
+                >Automated multiple business processes using PowerShell saving
+                the organization over 40 hours of work per week.</span
+              >
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-marker">›</span
+              ><span class="bullet-text"
+                >Reduced on-prem virtual infrastructure by 50% without impacting
+                production work or service availability.</span
+              >
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-marker">›</span
+              ><span class="bullet-text"
+                >Automated multiple security incident responses allowing rapid
+                containment of suspected malware and phishing emails.</span
+              >
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-marker">›</span
+              ><span class="bullet-text"
+                >Replaced legacy systems running on unsupported SharePoint,
+                Windows Server 2003 and 2008.</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="job" id="job-rtp">
+        <div class="job-header" onclick="toggleJob('rtp')">
+          <div>
+            <div class="job-name">Right To Play</div>
+            <div class="job-title">Technology Manager</div>
+          </div>
+          <div class="job-meta">
+            <span class="job-period">June 2012 – April 2018</span>
+            <span class="job-loc">Toronto, ON</span>
+            <span class="job-toggle" id="toggle-rtp">[ expand ]</span>
+          </div>
+        </div>
+        <div class="job-body" id="body-rtp">
+          <p class="job-desc">
+            Right To Play is a non-profit developing communities and life skills
+            in developing areas, working with children in 22 countries. I
+            managed all IT vendor relationships, infrastructure changes, and
+            wrote a comprehensive five year IT roadmap including migrating over
+            500 users across 5 countries from Windows XP/Server 2003 to Server
+            2012 and Exchange 2007 to Office 365.
+          </p>
+          <div class="job-ac">
+            <div class="bullet-item">
+              <span class="bullet-marker">›</span
+              ><span class="bullet-text"
+                >Created five year IT roadmap to simplify IT management,
+                procurement and implementation.</span
+              >
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-marker">›</span
+              ><span class="bullet-text"
+                >Created and implemented virtualization strategy including
+                consolidation and standardization of virtual host
+                hardware.</span
+              >
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-marker">›</span
+              ><span class="bullet-text"
+                >Reliably identified and repaired Active Directory replication
+                issues across four countries.</span
+              >
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-marker">›</span
+              ><span class="bullet-text"
+                >Maintained 99.99% uptime across all key systems during upgrade
+                and replacement projects.</span
+              >
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-marker">›</span
+              ><span class="bullet-text"
+                >Created processes to automate and simplify
+                onboarding/offboarding, server and desktop deployments.</span
+              >
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-marker">›</span
+              ><span class="bullet-text"
+                >Designed infrastructure to support 15,000 volunteers in Africa,
+                South-Asia and Latin America.</span
+              >
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-marker">›</span
+              ><span class="bullet-text"
+                >Reduced number of physical servers from over 40 to less than
+                25.</span
+              >
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-marker">›</span
+              ><span class="bullet-text"
+                >Replaced insecure site-to-site links with new IPSec based
+                tunnels.</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="job" id="job-jolera">
+        <div class="job-header" onclick="toggleJob('jolera')">
+          <div>
+            <div class="job-name">Jolera Inc</div>
+            <div class="job-title">Senior Systems Administrator</div>
+          </div>
+          <div class="job-meta">
+            <span class="job-period">June 2008 – May 2012</span>
+            <span class="job-loc">Toronto, ON</span>
+            <span class="job-toggle" id="toggle-jolera">[ expand ]</span>
+          </div>
+        </div>
+        <div class="job-body" id="body-jolera">
+          <p class="job-desc">
+            Jolera is an outsourced IT department specializing in the non-profit
+            sector. Networks I maintained had 50–2,000 employees spanning
+            Canada, the US, Africa, Asia and Europe. I assisted with escalated
+            issues, server-side and network troubleshooting, maintenance,
+            migration, new platform implementations and disaster recovery.
+          </p>
+          <div class="job-ac">
+            <div class="bullet-item">
+              <span class="bullet-marker">›</span
+              ><span class="bullet-text"
+                >Advanced troubleshooting of Windows Server 2000–2008 R2
+                hardware, software and configuration issues.</span
+              >
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-marker">›</span
+              ><span class="bullet-text"
+                >Advanced Active Directory administration and troubleshooting in
+                single and multi-domain configurations.</span
+              >
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-marker">›</span
+              ><span class="bullet-text"
+                >Advanced troubleshooting of Exchange 2003–2010; upgrades and
+                migrations.</span
+              >
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-marker">›</span
+              ><span class="bullet-text"
+                >Low-level root cause analysis ranging from eventlog analysis to
+                kernel dumps and live kernel debugging.</span
+              >
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-marker">›</span
+              ><span class="bullet-text"
+                >Troubleshot VMware ESX(i) 3.5–5.0 in standalone and multi-SAN
+                vCenter environments.</span
+              >
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-marker">›</span
+              ><span class="bullet-text"
+                >Conducted technical interviews for second and third tier staff
+                hiring.</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="job" id="job-columbia">
+        <div class="job-header" onclick="toggleJob('columbia')">
+          <div>
+            <div class="job-name">The Columbia Connextion</div>
+            <div class="job-title">Systems Administrator</div>
+          </div>
+          <div class="job-meta">
+            <span class="job-period">March 2005 – May 2008</span>
+            <span class="job-toggle" id="toggle-columbia">[ expand ]</span>
+          </div>
+        </div>
+        <div class="job-body" id="body-columbia">
+          <p class="job-desc">
+            Sole administrator for 10 client offices with 10–50 employees each.
+            Responsible for all network and configuration troubleshooting, daily
+            maintenance and disaster recovery operations.
+          </p>
+          <div class="job-ac">
+            <div class="bullet-item">
+              <span class="bullet-marker">›</span
+              ><span class="bullet-text"
+                >All troubleshooting for Server 2003 SBS configuration, software
+                and hardware issues.</span
+              >
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-marker">›</span
+              ><span class="bullet-text"
+                >Exchange 2003 maintenance, configuration, installation and
+                troubleshooting.</span
+              >
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-marker">›</span
+              ><span class="bullet-text"
+                >Configured firewalls using Cisco PIX, SonicWall,
+                Barracuda.</span
+              >
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-marker">›</span
+              ><span class="bullet-text"
+                >Implemented automated offsite backup solution via SCP/rsync
+                across Windows and Linux servers.</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-head" style="margin-top: 40px">Non-Professional</div>
+      <div class="bullet-list" style="margin-bottom: 0">
+        <div class="bullet-item">
+          <span class="bullet-marker">›</span
+          ><span class="bullet-text"
+            >Home Active Directory domain used to test configuration changes and
+            duplicate work issues in a lab environment.</span
+          >
+        </div>
+        <div class="bullet-item">
+          <span class="bullet-marker">›</span
+          ><span class="bullet-text"
+            >Hyper-V 2019 with direct and iSCSI storage running multiple
+            Linux/UNIX VMs; most services now in Docker containers.</span
+          >
+        </div>
+        <div class="bullet-item">
+          <span class="bullet-marker">›</span
+          ><span class="bullet-text"
+            >Ubuntu file server with ZFS-based storage array providing backups
+            to multiple home systems.</span
+          >
+        </div>
+        <div class="bullet-item">
+          <span class="bullet-marker">›</span
+          ><span class="bullet-text"
+            >Avid reader of technology and industry news; closely follows IT
+            security; contributor to small FOSS projects.</span
+          >
+        </div>
+      </div>
+
+      <footer class="readme-footer">
+        <span>robharman.me &copy; 2026</span>
+        <a href="/index.html">&larr; home</a>
+      </footer>
+      <p class="site-build">{{COMMIT_HASH}}</p>
+    </div>
+
+    <script src="/site.js"></script>
+    <script>
+      function toggleJob(id) {
+        var body = document.getElementById("body-" + id);
+        var toggle = document.getElementById("toggle-" + id);
+        var isOpen = body.classList.contains("open");
+        body.classList.toggle("open", !isOpen);
+        toggle.textContent = isOpen ? "[ expand ]" : "[ collapse ]";
+      }
+    </script>
+  </body>
+</html>

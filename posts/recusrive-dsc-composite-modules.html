@@ -1,0 +1,524 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recusrive DSC Composite Modules — robharman.me</title>
+    <link
+      rel="canonical"
+      href="https://robharman.me/recusrive-dsc-composite-modules/"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        font-size: 16px;
+      }
+      body {
+        min-height: 100vh;
+        transition:
+          background 0.2s,
+          color 0.2s;
+      }
+      :root {
+        --bg: #0e0f11;
+        --bg-sub: #161719;
+        --border: #2a2b2e;
+        --fg: #e8e4de;
+        --fg-muted: #6b6a67;
+        --fg-dim: #3e3d3b;
+        --accent: oklch(70% 0.12 195);
+        --accent-bg: oklch(25% 0.06 195);
+        --code-bg: #13151a;
+        --code-fg: #a8d8c8;
+        --mono: "JetBrains Mono", monospace;
+        --sans: "DM Sans", sans-serif;
+      }
+      body.light {
+        --bg: #f5f2ee;
+        --bg-sub: #edeae5;
+        --border: #d8d3cc;
+        --fg: #18181a;
+        --fg-muted: #888480;
+        --fg-dim: #ccc8c2;
+        --accent: oklch(38% 0.12 195);
+        --accent-bg: oklch(92% 0.04 195);
+        --code-bg: #e8e4de;
+        --code-fg: oklch(35% 0.12 195);
+      }
+      body {
+        background: var(--bg);
+        color: var(--fg);
+      }
+      .site-nav {
+        border-bottom: 1px solid var(--border);
+      }
+      .site-nav-inner {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 18px 24px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .site-logo {
+        font-family: var(--mono);
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--fg);
+        text-decoration: none;
+      }
+      .nav-links {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+      .nav-links a {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--fg-muted);
+        text-decoration: none;
+        letter-spacing: 0.04em;
+        transition: color 0.15s;
+      }
+      .nav-links a:hover {
+        color: var(--fg);
+      }
+      .nav-controls {
+        margin-left: auto;
+        display: flex;
+        gap: 6px;
+        align-items: center;
+      }
+      .picker {
+        display: flex;
+        border: 1px solid var(--border);
+        overflow: hidden;
+      }
+      .picker button {
+        font-size: 14px;
+        padding: 2px 7px;
+        cursor: pointer;
+        background: transparent;
+        color: var(--fg-muted);
+        border: none;
+        border-right: 1px solid var(--border);
+        transition:
+          background 0.15s,
+          color 0.15s;
+      }
+      .picker button:last-child {
+        border-right: none;
+      }
+      .picker button.active {
+        background: var(--fg);
+        color: var(--bg);
+      }
+      .picker-label {
+        font-family: var(--mono);
+        font-size: 10px;
+        color: var(--fg-muted);
+        letter-spacing: 0.04em;
+      }
+      .dark-btn {
+        font-family: var(--mono);
+        font-size: 10px;
+        padding: 3px 9px;
+        cursor: pointer;
+        background: transparent;
+        border: 1px solid var(--border);
+        color: var(--fg-muted);
+        transition: color 0.15s;
+      }
+      .post-wrap {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 48px 24px 80px;
+      }
+      .post-meta {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--fg-muted);
+        letter-spacing: 0.05em;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+      }
+      .post-meta .sep {
+        color: var(--fg-dim);
+      }
+      .post-tag {
+        font-size: 10px;
+        color: var(--accent);
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+      }
+      h1.post-title {
+        font-family: var(--sans);
+        font-size: 26px;
+        font-weight: 400;
+        line-height: 1.35;
+        color: var(--fg);
+        margin-bottom: 40px;
+        letter-spacing: -0.3px;
+        text-wrap: pretty;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 32px;
+      }
+      .post-body {
+        font-family: var(--sans);
+        font-size: 16px;
+        line-height: 1.8;
+        color: var(--fg);
+      }
+      .post-body p {
+        margin-bottom: 20px;
+      }
+      .post-body h2 {
+        font-size: 19px;
+        font-weight: 500;
+        margin: 36px 0 14px;
+        color: var(--fg);
+        letter-spacing: -0.2px;
+      }
+      .post-body h3 {
+        font-size: 16px;
+        font-weight: 500;
+        margin: 28px 0 10px;
+        color: var(--fg-muted);
+      }
+      .post-body ul,
+      .post-body ol {
+        margin: 0 0 20px 20px;
+      }
+      .post-body li {
+        margin-bottom: 6px;
+        line-height: 1.7;
+        color: var(--fg-muted);
+      }
+      .post-body a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid var(--accent-bg);
+      }
+      .post-body a:hover {
+        border-bottom-color: var(--accent);
+      }
+      .post-body hr {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 28px 0;
+      }
+      .post-body em {
+        font-style: italic;
+      }
+      .post-body strong {
+        font-weight: 600;
+      }
+      .post-body blockquote {
+        border-left: 3px solid var(--border);
+        padding-left: 16px;
+        margin: 20px 0;
+        color: var(--fg-muted);
+        font-style: italic;
+      }
+      .post-body code {
+        font-family: var(--mono);
+        font-size: 0.84em;
+        background: var(--code-bg);
+        color: var(--code-fg);
+        padding: 1px 5px;
+        border: 1px solid var(--border);
+      }
+      .post-body pre {
+        background: var(--code-bg);
+        border: 1px solid var(--border);
+        margin: 24px 0;
+        overflow-x: auto;
+        position: relative;
+      }
+      .post-body pre code {
+        display: block;
+        padding: 16px;
+        font-size: 13px;
+        line-height: 1.7;
+        border: none;
+        background: none;
+        color: var(--code-fg);
+        white-space: pre;
+      }
+      .post-body figure {
+        margin: 24px 0;
+      }
+      .post-body figure img {
+        max-width: 100%;
+        height: auto;
+      }
+      .post-body figure figcaption {
+        font-size: 13px;
+        color: var(--fg-muted);
+        margin-top: 8px;
+        font-style: italic;
+      }
+      .post-nav {
+        margin-top: 56px;
+        padding-top: 28px;
+        border-top: 1px solid var(--border);
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+      .post-nav-link {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--fg-muted);
+        text-decoration: none;
+        letter-spacing: 0.03em;
+        line-height: 1.5;
+        transition: color 0.15s;
+        flex: 0 1 calc(50% - 12px);
+        min-width: 0;
+      }
+      .post-nav-link:hover {
+        color: var(--accent);
+      }
+      .post-footer {
+        margin-top: 48px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--fg-dim);
+        display: flex;
+        justify-content: space-between;
+      }
+      .post-footer a {
+        color: var(--fg-dim);
+        text-decoration: none;
+      }
+      .post-footer a:hover {
+        color: var(--fg-muted);
+      }
+      .share-btn {
+        display: block;
+        width: fit-content;
+        margin: 32px auto 0;
+        font-family: var(--mono);
+        font-size: 12px;
+        background: transparent;
+        border: none;
+        color: var(--fg-muted);
+        cursor: pointer;
+        padding: 0;
+        transition: color 0.15s;
+      }
+      .share-btn:hover {
+        color: var(--fg);
+      }
+      /* ── Variant-aware typography ─── */
+      body.view-terminal .post-body {
+        font-family: var(--mono);
+        font-size: 13px;
+        line-height: 1.7;
+      }
+      body.view-terminal h1.post-title {
+        font-family: var(--mono);
+        font-size: 19px;
+        font-weight: 500;
+        letter-spacing: 0;
+      }
+      body.view-terminal .post-body h2,
+      body.view-terminal .post-body h3 {
+        font-family: var(--mono);
+      }
+      /* ── Back-home link ─── */
+      .post-back {
+        display: inline-block;
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.04em;
+        color: var(--fg-muted);
+        text-decoration: none;
+        margin-bottom: 32px;
+        transition: color 0.15s;
+      }
+      .post-back:hover {
+        color: var(--fg);
+      }
+      body.view-cards .post-nav-link {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        padding: 16px 20px;
+        flex: 0 1 calc(50% - 12px);
+        min-width: 0;
+        font-family: var(--sans);
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: -0.1px;
+        line-height: 1.4;
+        transition:
+          background 0.15s,
+          color 0.15s;
+      }
+      body.view-cards .post-nav-link:hover {
+        background: var(--card-hover);
+        color: var(--fg);
+      }
+      body.view-newspaper .post-nav-link {
+        font-family: var(--sans);
+        font-size: 15px;
+        font-weight: 400;
+        letter-spacing: -0.1px;
+        line-height: 1.4;
+      }
+      .site-build {
+        margin-top: 6px;
+        font-family: var(--mono);
+        font-size: 10px;
+        color: var(--fg-dim);
+        letter-spacing: 0.04em;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="site-nav" aria-label="Site navigation">
+      <div class="site-nav-inner">
+        <a href="/index.html" class="site-logo">robharman.me</a>
+        <div class="nav-links">
+          <a href="/readme.html">readme</a>
+          <a
+            href="https://github.com/robharman"
+            target="_blank"
+            rel="noopener noreferrer"
+            >github</a
+          >
+          <a href="/rss.xml">rss</a>
+        </div>
+        <div class="nav-controls">
+          <span class="picker-label">Style:</span>
+          <div class="picker">
+            <button type="button" class="tab-btn" data-variant="terminal" title="terminal">
+              🖥️
+            </button>
+            <button type="button" class="tab-btn" data-variant="cards" title="card">
+              🃏
+            </button>
+            <button type="button" class="tab-btn" data-variant="newspaper" title="newspaper">
+              📰
+            </button>
+          </div>
+          <button type="button" class="dark-btn" id="dark-btn">&#9728;</button>
+        </div>
+      </div>
+    </nav>
+    <div class="post-wrap">
+      <a href="/index.html" class="post-back">&larr; home</a>
+      <div class="post-meta">
+        <time datetime="2021-03-18">2021 Mar 18</time>
+        <span class="sep">&middot;</span><span class="post-tag">Azure</span>
+      </div>
+      <h1 class="post-title">Recusrive DSC Composite Modules</h1>
+      <div class="post-body">
+        <p>
+          I've been learning a lot about how to use Azure Automation to manage
+          DevOps deployments of our Windows Servers. This has led me to a dozen
+          DSC modules, some with two dozen configurations within them. This led
+          to all of the composite build files having dozens of lines duplicated
+          between all of them, and me wanting to further abstract the baseline
+          configuration even further. All you need to do is import the module
+          from within a resource and set your defaults.
+        </p>
+        <hr />
+        <p>Your DSC module structure needs to be the same as always:</p>
+        <pre>
+PRIVATE.DSC.WINDOWS.DOMAINCONTROLLER
+|   DSC.Windows.DomainController.psd1
+|
+\---DSCResources
+    +---DomainControllerCommon
+    |       DomainControllerCommon.psd1
+    |       DomainControllerCommon.schema.psm1
+    |
+    +---DomainControllerCommonDefaults
+    |       DomainControllerCommonDefaults.psd1
+    |       DomainControllerCommonDefaults.schema.psm1
+    |
+    +---DomainControllerDesktop
+    |       DomainControllerDesktop.psd1
+    |       DomainControllerDesktop.schema.psm1
+    |
+    +---DomainControllerDHCPServer
+    |       DomainControllerDHCPServer.psd1
+    |
+    +---DomainControllerFirewall
+    |       DomainControllerFirewall.psd1
+    |       DomainControllerFirewall.schema.psm1
+    |
+    +---DomainControllerNLA
+    |       DomainControllerNLA.psd1
+    |       DomainControllerNLA.schema.psm1
+    |
+    \---DomainControllerRegistry
+            DomainControllerRegistry.psd1
+            DomainControllerRegistry.schema.psm1
+</pre
+        >
+        <p>
+          Each of these .psm1's contain their own portion of the composite
+          configuration, then within the DomainControllerCommonDefaults.psm1
+          file we've got the following:
+        </p>
+        <pre><code class="language-powershell">Configuration DomainControllerCommonDefaults {
+    Import-DSCResource -ModuleName "PRIVATE.DSC.Windows.DomainController"
+
+    DomainControllerCommon SetDCCommon {}
+    DomainControllerFirewall SetDCFirewall {}
+    DomainControllerNLA SetNLANetLogonDependencies {}
+    DomainControllerRegistry SetDCRegistryEntries {}
+}
+```</code></pre>
+        <p>
+          Then in the DC configuration file instead of the four settings we can
+          just use:
+        </p>
+        <pre><code class="language-powershell">DomainControllerCommonDefaults SetCommonDCDefaults {}</code></pre>
+      </div>
+      <button type="button" id="share-btn" class="share-btn">copy link</button>
+      <nav class="post-nav" aria-label="Post navigation">
+        <a
+          href="installing-fortigate-on-hyper-v-2019.html"
+          class="post-nav-link"
+          >&larr; Installing FortiGate 7.0.x on Hyper-V 2019</a
+        ><a
+          href="initial-impressions-of-fortisiem-6-1.html"
+          class="post-nav-link"
+          >Initial Impressions of FortiSIEM 6.1 &rarr;</a
+        >
+      </nav>
+      <footer class="post-footer">
+        <span>robharman.me &copy; 2026</span>
+        <a href="/index.html">&larr; home</a>
+      </footer>
+      <p class="site-build">{{COMMIT_HASH}}</p>
+    </div>
+    <script src="/site.js"></script>
+  </body>
+</html>
