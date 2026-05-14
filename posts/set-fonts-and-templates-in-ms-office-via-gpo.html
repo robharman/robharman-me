@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -8,18 +8,15 @@
     </title>
     <link
       rel="canonical"
-      href="https://robharman.me/set-fonts-and-templates-in-ms-office-via-gpo/"
-    />
+      href="https://robharman.me/set-fonts-and-templates-in-ms-office-via-gpo/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       rel="preconnect"
       href="https://fonts.gstatic.com"
-      crossorigin="anonymous"
-    />
+      crossorigin="anonymous" />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
     <style>
       *,
       *::before,
@@ -417,13 +414,25 @@
         <div class="nav-controls">
           <span class="picker-label">Style:</span>
           <div class="picker">
-            <button type="button" class="tab-btn" data-variant="terminal" title="terminal">
+            <button
+              type="button"
+              class="tab-btn"
+              data-variant="terminal"
+              title="terminal">
               🖥️
             </button>
-            <button type="button" class="tab-btn" data-variant="cards" title="card">
+            <button
+              type="button"
+              class="tab-btn"
+              data-variant="cards"
+              title="card">
               🃏
             </button>
-            <button type="button" class="tab-btn" data-variant="newspaper" title="newspaper">
+            <button
+              type="button"
+              class="tab-btn"
+              data-variant="newspaper"
+              title="newspaper">
               📰
             </button>
           </div>
@@ -538,7 +547,7 @@
           This means you either need to add the key to your DC, or, ideally, be
           running RSAT and remotely configuring the GPO so you don’t have to,
           and since you shouldn’t have Office installed on your DC. Browse
-          to:HKCUSoftwareMicrosoftOfficeOffice14.0CommonMailSettingsand select
+          to:HKCUSoftwareMicrosoftOfficeOffice14.0CommonMailSettings and select
           that key, and all subkeys. Click Finish, and that’s that.<br />
           The same steps will work with Windows Vista, 7, 8 and with Office
           2007, as long as you update the paths as appropriate.
