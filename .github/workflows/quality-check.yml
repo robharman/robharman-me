@@ -20,7 +20,7 @@ jobs:
 
       - run: npm install -g cspell@latest
 
-      - run: cspell lint "**/*.html" --no-progress --config cspell.json
+      - run: cspell lint "**/*.html" --no-progress
 
   html-validate:
     name: HTML validation

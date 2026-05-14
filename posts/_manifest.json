@@ -54,8 +54,8 @@
     "excerpt": "Fortinet's documentation is pretty terrible. This is especially true for their Hyper-V deployment instructions which leave out multiple steps, and left me frustrated trying to piece together instructions from multiple articles."
   },
   {
-    "slug": "recusrive-dsc-composite-modules",
-    "title": "Recusrive DSC Composite Modules",
+    "slug": "recursive-dsc-composite-modules",
+    "title": "Recursive DSC Composite Modules",
     "dateISO": "2021-03-18",
     "dateLong": "2021 Mar 18",
     "dateMono": "2021-03-18",
