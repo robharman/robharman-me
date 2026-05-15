@@ -5,7 +5,7 @@
     <link>https://robharman.me</link>
     <description>Posts by Rob Harman — IT infrastructure, networking, and occasional adventures.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 14 May 2026 07:20:39 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 15 May 2026 06:29:50 GMT</lastBuildDate>
     <atom:link href="https://robharman.me/rss.xml" rel="self" type="application/rss+xml"/>
   <item>
     <title>On-Prem Azure Pipelines Pester Tests Fail with ##[error]Unhandled: spawn pwsh ENOENT</title>
